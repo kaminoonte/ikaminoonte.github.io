@@ -1,0 +1,25 @@
+@import "../../vars/all";
+
+.search-input {
+    .flexbox;
+    -webkit-filter:drop-shadow(2px 3px 4px fadeout(@black, 75%));
+
+    &:before {
+        .icon(@fa-var-search);
+        font-size:@large-text;
+        background:@white;
+        color:@base02;
+        padding:0 @column-pad;
+        .flexed(0);
+        .flexbox(@align:center);
+    }
+
+    .input {
+        background:@white;
+        padding-left:@column-pad;
+        border:none;
+        .flexed(1);
+        .no_appearance;
+    }
+
+}

@@ -1,0 +1,63 @@
+@import "../../vars/all";
+
+.mixin-related-videos () {
+    border-top:solid 1px fadeout(@base02, 50%);
+    background:fadeout(@white, 75%);
+    padding:@row-pad @column-pad;
+    color:@blue;
+    .no-scrollbar;
+    .flexbox(@dir:row;@wrap:wrap;);
+
+    .list-item {
+        .flexbox(@justify:flex-start;@align:center;);
+        height:(2 * @row);
+        width:100%;
+        cursor:pointer;
+        overflow:hidden;
+        background-color:@white;
+        background:fadeout(@white, 75%);
+        padding:@row-pad @column-pad;
+
+        &:hover {
+            .transition(@duration:.2s);
+            transition-property:background-color, color;
+            background-color:fadeout(@red,75%);
+            color:@white;
+        }
+
+        &:not(:last-child) {
+            margin-bottom:@row-pad;
+        }
+
+        .thumbnail {
+            .flexed(0);
+            width:(@column);
+
+            img {
+                width:100%;
+                box-shadow:2px 2px @thick-border fadeout(@black,40%);
+            }
+        }
+
+        .meta {
+            .flexed(1);
+            .flexbox(@dir:column;@justify:space-between;);
+            height:100%;
+
+            .title {
+                width:100%;
+                font-size:@medium-text;
+                .flexed(1);
+            }
+
+            .info-bar {
+                .flexbox(@dir:row;@justify:space-between;);
+            }
+
+            & > * {
+                .transition(@prop:background);
+                padding:@row-pad @column-pad;
+            }
+        }
+    }
+}

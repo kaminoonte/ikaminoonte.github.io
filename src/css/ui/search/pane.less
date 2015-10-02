@@ -1,0 +1,54 @@
+@import "../../vars/all";
+@import "../kit/search-input";
+@import "list";
+
+.mixin-search-pane () {
+    @bg:@theme-background; // @base01; // darken(@base00, 15%);
+    background:@bg;
+    background:;
+    border-right:solid 1px fadeout(@base02, 50%);
+    z-index:1;
+    .flexbox(@dir:column; @justify:flex-start);
+
+    @media (max-width:960px), (max-device-width:960px) {
+        box-shadow:none;
+    }
+
+    &.searching {
+        & > .result-list { display:none !important; }
+
+        &:before {
+            position:absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            font-size:(2 * @row);
+            width: 1em;
+            height: 1em;
+            text-align:center;
+            color:fadeout(@white, 0%);
+            text-shadow:0px 0px @huge-text #fff;
+            .spinner;
+            .icon(@fa-var-spinner);
+        }
+    }
+
+    .sol-input-wrapper {
+        height:@row;
+        padding:@row-pad @column-pad;
+        .ui-hseparator;
+        .flexed(0);
+        .flexbox(@justify:stretch);
+
+        &> .sol-input {
+            .flexed(1);
+        }
+    }
+
+    .result-list {
+        .mixin-search-list;
+        .flexed(1);
+    }
+}

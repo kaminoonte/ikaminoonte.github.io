@@ -1,0 +1,164 @@
+@import "fonts";
+@import "measure";
+
+// Transition mixins
+.transition (@duration: 0.3s, @prop: all, @easing: linear, @delay: 0s) {
+    transition: @prop @duration @easing @delay;
+}
+
+// Flexbox
+.flexbox (@dir: row, @justify: center, @align: stretch, @align-content: stretch, @wrap: nowrap) {
+    display: flex;
+    align-items: @align;
+    align-content: @align-content;
+    justify-content: @justify;
+    flex-direction: @dir;
+    flex-wrap: @wrap;
+}
+.flexed (@flex: 1, @order: 0) {
+    flex: @flex @flex auto;
+    /*display:block;*/
+    position: relative;
+    /*order:@order;*/
+}
+.flexed (complex, @grow: 0, @shrink: 0, @base: auto, @order: 0) {
+    flex: @grow @shrink @base;
+    display:block;
+    position: relative;
+    /*order:@order;*/
+}
+
+// General
+.no_appearance () {
+    appearance:none;
+    outline:none;
+    list-style:none;
+}
+.no_selection () {
+    user-select:none;
+}
+.text-outline (@color; @size: 1px) {
+    text-shadow:@size 0px @color,
+                -@size 0px @color,
+                0px @size @color,
+                0px -@size @color;
+}
+.inset-text (@color: #000; @light: #fff) {
+    color:transparent;
+    text-shadow:1px 1px 2px fadeout(@light, 50%), 0px 0px 0px @color;
+}
+.no-scrollbar {
+    &::-webkit-scrollbar, scrollbar {
+        display:none;
+    }
+}
+
+// Font-Awesome
+.icon(@content) {
+    content:"@{content}";
+    font-family:FontAwesome;
+}
+
+// UI
+.ui-hseparator(@color: @white) {
+    &:after {
+        content:"";
+        position:absolute;
+        bottom:0;
+        left:0; right:0;
+        width:100%;
+        height:@thin-border;
+        background:linear-gradient(to right, transparent, @color, transparent);
+
+        @media (max-device-width:960px) {
+            height:(2 * @thin-border);
+        }
+    }
+}
+
+.ui-topbar-button (@size: @row) {
+    width:@size;
+    height:@size;
+    background:transparent;
+    color:@white;
+    font-size:(@huge-text * 1.5);
+    text-align:center;
+    padding:@row-pad @column-pad;
+    border-radius:50%;
+    border:solid @medium-border @white;
+    cursor:pointer;
+
+    &:active {
+        background:@base1;
+    }
+}
+
+.ui-list-item(@odd-bg:lighten(@base02, 25%);@even-bg:lighten(@base02, 15%)) {
+    color:@white;
+    .ui-hseparator;
+}
+
+.ui-slider(@color:@base02; @background:@base00; @border:@base01; @thumb:'') {
+    @border-radius:@column-pad;
+    background:@background;
+    border-radius:@border-radius;
+    cursor:pointer;
+
+    .thumb {
+        .flexbox(@justify:flex-end;@align:center;);
+        .ui-knob(@color;@thumb;@border;@border-radius);
+    }
+}
+
+.ui-progressbar(@color:@base00, @background:@base2, @border:@base01, @thumb:@base00) {
+    .no_appearance;
+    @border-radius:@column-pad;
+    background:@background;
+    border-radius:@border-radius;
+    cursor:pointer;
+    padding:0;
+    margin:0 @column-pad;
+
+    &::-webkit-progress-inner-element,
+    &::-webkit-progress-bar {
+        background:transparent;
+    }
+
+    &::-webkit-progress-value {
+        .flexbox(@justify:flex-end;@align:center;);
+        .ui-knob(@color;@thumb;@border;@border-radius);
+        box-sizing:border-box;
+        position:relative;
+    }
+}
+
+.ui-knob(@color;@knob;@border;@border-radius) {
+    background:@color;
+    background-image:linear-gradient(to bottom,
+                     transparent @thin-border,
+                     fadeout(@black, 75%) @thin-border,
+                     transparent);
+    border: solid @thin-border @border;
+    border-radius:@border-radius;
+
+
+    & when (iscolor(@knob)) {
+        &:after {
+            .flexed(0);
+            @dia:@huge-text;
+            width:@dia;
+            height:@dia;
+            right:-(@dia / 2);
+            content:"";
+            border:solid @thin-border lighten(@thumb,25%);
+            border-left-width:0;
+            border-top-width:0;
+            border-radius:50%;
+            background:radial-gradient(circle at (-@thick-border * 2) -@thick-border,
+                lighten(@thumb, 50%), @thumb);
+            box-shadow:@thin-border (2 * @thin-border) @thick-border fadeout(@black, 75%);
+            display:block;
+            box-sizing:border-box;
+        }
+    }
+}

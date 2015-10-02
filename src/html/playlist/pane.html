@@ -1,0 +1,47 @@
+<section class="playlist-pane" ng-class="{ 'active': !!items.length && ready }"
+    sol-vibrate="currentlyDragging">
+    <playlist-progress data-progress="progress" duration="{{duration}}"></playlist-progress>
+    <header class="playlist-actions">
+        <span class="action clear" ng-click="clearPlaylist()">
+            <span class="text">Clear All</span>
+        </span>
+
+        <span class="action save" ng-click="publishPlaylist()">
+            <span class="text">Save Playlist</span>
+        </span>
+
+        <sol-input placeholder="Search in playlist..."
+            value="query" icon="search"></sol-input>
+    </header>
+    <section class="playlist-wrapper">
+        <ul class="indices">
+            <li class="index" ng-repeat="item in items track by $index"
+                ng-attr-visible="{{itemMatch(item, query)}}"
+                ng-class="{'active': getItemProgress($index), 'actions-open': $index === getCurrentlyOpenIdx()}">
+                {{$index + 1}}
+            </li>
+        </ul>
+        <ul class="playlist" ui-sortable="sortableOpts"
+                    ui-sortable-on-change="onSortChange" ng-model="items">
+            <playlist-item
+                ng-repeat="item in items track by $index"
+                class="playlist-item"
+                ng-attr-visible="{{itemMatch(item, query)}}"
+                sol-slide-rm="items"
+                sol-slide-rm-handle=".title"
+                sol-slide-rm-after="savePlaylist(); $emit('closeTrackActions')"
+                data-index="{{$index}}"
+                data-title="{{item.snippet.title}}"
+                play-next="{{item.playNext || ''}}"
+                stop-here="{{item.stopHere || ''}}"
+                repeat="{{item.repeatTrack || ''}}"
+                active="{{isItemActive($index)}}"
+                progress="{{getItemProgress($index)}}"
+                data-duration="{{item.contentDetails.duration}}"
+                actions-open="item.actionsOpen"
+                >
+            </playlist-item>
+        </ul>
+    </section>
+   
+</section>

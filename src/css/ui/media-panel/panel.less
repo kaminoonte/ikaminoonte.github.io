@@ -1,0 +1,58 @@
+@import "../../vars/all";
+@import "./related";
+
+.mixin-media-panel () {
+    background:@theme-background;
+    .flexbox(@dir:column);
+    .transition;
+
+    &.cued {
+        z-index:10;
+        background:@black;
+
+        &:after {
+            content:"You have to play the video manually";
+            font-size:2 * @huge-text;
+            font-weight:bold;
+            text-shadow:1px 1px @black;
+            color:@white;
+            padding:@row-pad @column-pad;
+            text-align:center;
+        }
+    }
+
+    .sol-tabs {
+        .flexed(1);
+    }
+
+    .media {
+        .flexbox(@align:center; @dir:column; @justify:center);
+
+        iframe {
+            .flexed(0);
+            max-width:100%;
+        }
+    }
+	.related-videos {
+        box-shadow:inset 0px @thick-border @thick-border -@thick-border @black;
+        overflow-y:auto;
+        .mixin-related-videos;
+        .transition(@prop:height;@easing:ease-in);
+
+        @media only screen and (max-height:680px),
+            (max-width:960px), (max-device-width:960px) {
+            min-height:(2 * @row);
+            overflow-x:auto;
+            white-space:nowrap;
+            .no-scrollbar;
+        }
+
+        .list-item {
+            @media only screen and (max-height:680px),
+                (max-width:960px), (max-device-width:960px) {
+                white-space:normal;
+                display:inline-flex;
+            }
+        }
+    }
+}
