@@ -1,0 +1,8 @@
+node_modules/*
+src/plugins/**/*
+src/vendor/*
+src/app.browser.js
+target/*
+test-reports/*
+src/apikeys.json
+target/apikeys.json

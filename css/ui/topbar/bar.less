@@ -1,0 +1,182 @@
+@import "../../vars/all";
+
+.mixin-topbar () {
+    .flexbox(@justify:space-between;@wrap:wrap);
+    @bg:@theme-topbar-bg;
+    @title:@white;
+    background:@bg;
+    padding:@row-pad 0;
+    font-size:(@huge-text * 1.5);
+    z-index:1000;
+    box-sizing:content-box;
+    border-bottom:solid 1px fadeout(@base02, 50%);
+
+    @media (max-width:960px), (max-device-width:960px) {
+        box-shadow:none;
+    }
+
+    .now-playing {
+        height:@row;
+        width:33%;
+        .flexed(0);
+        .flexbox;
+        @media (max-width: 960px), (max-device-width: 960px) {
+            width:100%;
+        }
+    }
+
+    .now-playing .thumbnail {
+        width:(@column / 2);
+        padding:@thick-border;
+        .flexed(0);
+        .flexbox(@align:center); // just for now
+
+        .image {
+            max-width:100%;
+            max-height:100%;
+            // just for now:
+            .flexed(1);
+            background:#fff;
+        }
+    }
+
+    .now-playing .title {
+        color:@title;
+        font-size:(@huge-text);
+        padding-left:@column-pad;
+        .flexed(1);
+        .flexbox(@dir:column);
+
+        .text {
+            text-overflow:ellipsis;
+            overflow:hidden;
+        }
+    }
+
+    .media-controls {
+        .flexed(1);
+        .flexbox;
+        .no_selection;
+
+        @media (max-device-width: 960px),(max-width: 960px) {
+            .flexed(0);
+            display:flex;
+        }
+        @media (max-device-width: 960px) {
+            order:2;
+        }
+
+        &.buffering .control[data-value="play-toggle"]:after {
+            margin-left:0;
+            .spinner;
+            .icon(@fa-var-spinner);
+        }
+
+        .control {
+            font-size:0.75em;
+            margin:0 @column-pad;
+            .ui-topbar-button;
+            .flexed(0);
+            .flexbox(@dir:column);
+
+            &[data-value="play-prev"] {
+                &:after {
+                    .icon(@fa-var-step-backward);
+                }
+            }
+            &[data-value="play-toggle"] {
+                font-size:1em;
+                &:after {
+                    .icon(@fa-var-play);
+                    margin-left:(2 * @medium-border);
+                }
+            }
+            &[data-value="play-next"] {
+                &:after {
+                    .icon(@fa-var-step-forward);
+                }
+            }
+        }
+    }
+
+    .media-controls.active {
+        [data-value="play-toggle"]:after {
+            .icon(@fa-var-pause);
+            margin-left:0;
+        }
+    }
+
+    .volume-slider {
+        padding:0 (@column-pad * 2);
+        width:33%;
+        .flexed(0);
+        .flexbox(@align:center);
+        .no_selection;
+
+        @media (max-device-width: 960px),(max-width: 960px) {
+            .flexed(1);
+            display:flex;
+        }
+        @media (max-device-width: 960px) {
+            order:1;
+            padding:0 @column-pad;
+        }
+
+        .toggle-mute {
+            margin:0 @column-pad;
+            .ui-topbar-button;
+            .flexed(0);
+            .flexbox(@align:center);
+
+            &:before {
+                .icon(@fa-var-volume-up);
+            }
+
+            &.muted:before {
+                .icon(@fa-var-volume-down);
+            }
+
+            &.muted:after {
+                content:"";
+                position:absolute;
+                top:0;
+                bottom:0;
+                left:0;
+                margin:auto;
+                height:@medium-border;
+                width:100%;
+                background:@white;
+                transform:rotateZ(-45deg);
+            }
+
+            @media (max-device-width: 960px) {
+                margin:0;
+            }
+        }
+
+        .toggle-mute.muted + .slider {
+            opacity:.5;
+            .thumb {
+                background:@blue;
+            }
+        }
+
+        .slider {
+            .ui-slider(@color:@cyan;@thumb:@base00);
+            .flexed(1);
+            height:(2*@row-pad);
+            margin:0 @column-pad;
+
+            .thumb {
+                position:absolute;
+                left:0;
+                top:0;
+                bottom:0;
+                margin:auto;
+                width:50%;
+                height:100%;
+                box-sizing:content-box;
+            }
+        }
+    }
+}
