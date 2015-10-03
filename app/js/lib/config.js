@@ -19,8 +19,8 @@ Config = window.Config || {};
 */
 
 Config.App = {
-  id: 15703,
-  hash: 'b46cb6a95c25adf6af7db57e922e5e7e',
+ id: 2496,
+  hash: '8da85b0d5bfe62527e5b244c209159c3',
   version: '0.4.7',
   domains: ['lentagram.org', 'kaminoonte.github.io']
 };
