@@ -22,7 +22,7 @@ Config.App = {
  id: 2496,
   hash: '8da85b0d5bfe62527e5b244c209159c3',
   version: '0.4.7',
-  domains: ['lentagram.org', 'kaminoonte.github.io']
+  domains: ['kaminoonte.github.io']
 };
 
 Config.Modes = {
