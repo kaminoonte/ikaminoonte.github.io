@@ -184,8 +184,8 @@ wavesurfer.init({
 	cursorColor: '#567ca4',
 	cursorWidth: 1,
 	height: 80,
-	waveColor: '#567ca4',
-	progressColor: '#DBE0E4'
+	waveColor: '#DBE0E4',
+	progressColor: '#567ca4'
 });
 
 
