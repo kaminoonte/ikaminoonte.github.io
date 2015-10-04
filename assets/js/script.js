@@ -62,7 +62,7 @@ dropZone.on('drop', function(e) {
 		var files = e.originalEvent.dataTransfer.files;
 
 		for(var j=0; j<files.length; j++){
-			if(files[j].type.match(/audio\/(mp3|mpeg)/)){
+			if(files[j].type.match(/audio\/(mp3|mpeg|m3u)/)){
 
 				getID3Data(files[j], function (song) {
 					allTracks.push(song);
@@ -88,7 +88,7 @@ function traverseFileTree(item,path) {
 	path = path || "";
 	if(item.isFile){
 		item.file(function(file){
-			if(file.type.match(/audio\/mp3/)){
+			if(file.type.match(/audio\/mp3\/m3u/)){
 				getID3Data(file, function (song) {
 					allTracks.push(song);
 					playlist.push(song);
