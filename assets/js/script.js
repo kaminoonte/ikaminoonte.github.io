@@ -181,11 +181,11 @@ var wavesurfer = Object.create(WaveSurfer);
 
 wavesurfer.init({
 	container: document.querySelector('#wave'),
-	cursorColor: '#aaa',
+	cursorColor: '#567ca4',
 	cursorWidth: 1,
 	height: 80,
-	waveColor: '#588efb',
-	progressColor: '#f043a4'
+	waveColor: '#f043a4',
+	progressColor: '#DBE0E4'
 });
 
 
