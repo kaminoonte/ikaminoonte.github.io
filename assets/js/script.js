@@ -1,4 +1,4 @@
-
+﻿
 var allTracks = [],		// An array for all the files loaded in the track
 	playlist = [], 		// An array for the current playlist
 	temporarySearchPlaylist = [],	// A helper array for when we are searching
@@ -62,7 +62,7 @@ dropZone.on('drop', function(e) {
 		var files = e.originalEvent.dataTransfer.files;
 
 		for(var j=0; j<files.length; j++){
-			if(files[j].type.match(/audio\/(mp3|mpeg)\/m3u/)){
+			if(files[j].type.match(/audio\/(mp3|mpeg)/)){
 
 				getID3Data(files[j], function (song) {
 					allTracks.push(song);
@@ -88,7 +88,7 @@ function traverseFileTree(item,path) {
 	path = path || "";
 	if(item.isFile){
 		item.file(function(file){
-			if(file.type.match(/audio\/mp3\/m3u/)){
+			if(file.type.match(/audio\/mp3/)){
 				getID3Data(file, function (song) {
 					allTracks.push(song);
 					playlist.push(song);
