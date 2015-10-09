@@ -1,78 +1,137 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-<meta charset="UTF-8">
-<title>Lentagram Online Music Player mp3/mpeg</title>
-<link href='assets/css/styles.css' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.min.css">
-<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
-<meta name="robots" content="follow"><meta name="googlebot" content="index">
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+	    <title>#Lentagram</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	
+		<link rel="Shortcut Icon" type="image/x-icon" href="icon.png" />
+	
+        <meta name="robots" content="follow"><meta name="googlebot" content="index">
 <meta name='yandex-verification' content='410a9bc8155462e2' />
 <meta name='wmail-verification' content='28cc9b604a8a1aec27253f67623ac2d1' />
 <meta name="msvalidate.01" content="6F1935066B57CCAA6D8124B8B6F9B319" />
-<meta name="description" content="Drag and drop your tracks or different mixes and listen in audio player">
-<meta name="keywords" content="music,Drag and drop,artist,mp3,mp3 music,play music,mixed">      
-<meta property="og:title" content="Lentagram Online Music Player mp3/mpeg" />
+
+<meta name="keywords" content="photo,instagram,artist,insta,search photo,lenta">      
+<meta property="og:title" content="#Lentagram" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://www.lentagram.org/" />
-    
-</head>
-<body>
+        
+	    <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="css/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="css/Communist-fontfacekit/stylesheet.css" rel="stylesheet">
+		<link href="jquery.fancybox-1.3.4.css" rel="stylesheet">
+	    <link href="css/main.css" rel="stylesheet">
+	
+		<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="jquery.fancybox-1.3.4.pack.js"></script>
+		<script type="text/javascript" src="dateFormat.js"></script>
+		<script type="text/javascript" src="srobbin-jquery-backstretch/jquery.backstretch.min.js"></script>
+		<script type="text/javascript" src="easing.js"></script>
+		<script type="text/javascript" src="instagramTheatre.js"></script>
+		<script type="text/javascript" src="js/demo.js"></script>
+	
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// Calling the Plugin
+				$('.instagram-theatre').instagramTheatre({
+					mode : 'popular',
+					accessToken : '347500701.7edc862.0937ef3d262c4f6e895e3f25515a7c63',
+				});
+			});
+		</script>
+	</head>
 
-<div id="container" class="disabled">
+	<body>
+		<div class="sidebar-nav">
+         
+			<a href="index.html"><h1>Lentagram</h1></a>
+		
+            
+            
+          <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script><div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="big" data-yashareQuickServices="vkontakte,facebook,twitter,gplus" data-yashareTheme="counter"></div>  
+            
+            <div  class="opa"></div>
+            <div class="customization-barunlim">
+			<!--	<label>Select a color:</label>
+			<div class="colors">
+				<a data-color="#112E10" class="green" style="background-color: rgb(51, 153, 102);"></a>
+				<a data-color="#010028" class="blue" style="background-color: rgb(65, 126, 137);"></a>
+				<a data-color="#00280c" class="dark-green" style="background-color: rgb(83, 119, 101);"></a>
+				<a data-color="#4b2815" class="brown" style="background-color: rgb(120, 113, 95);"></a>
+				<a data-color="#000000" class="black" style="background-color: rgb(85, 85, 85);"></a>
+			</div>-->
+                
+                
+                
+                
+			<form id="searchByTag">
+				<label>Search by tag</label>
+				<input class="searchTag text" type="text" value="" onfocus="this.value=''" />
+				<input class="submit" type="submit" value="go">
+			</form>
 
-	<div id="cover-art">
-		<div id="cover-art-big"></div>
-		<img id="cover-art-small" alt="cover-art-small" src="assets/img/default.png">
-		<div class="instructions">Drop your audio files here.</div>
-	</div>
-
-	<div id="wave"></div>
-
-	<div id="control-bar">
-
-		<div class="player-control">
-			<div id="previous-button" title="Previous"><i class="fa fa-fast-backward"></i></div>
-			<div id="play-button" title="Play"><i class="fa fa-play"></i></div>
-			<div id="pause-button" title="Pause"><i class="fa fa-pause"></i></div>
-			<div id="stop-button" title="Stop"><i class="fa fa-stop"></i></div>
-			<div id="next-button" title="Next"><i class="fa fa-fast-forward"></i></div>
-			<div id="shuffle-button" title="Shuffle Off"><i class="fa fa-random"></i></div>
-			<div id="repeat-button" title="Repeat Off"><i class="fa fa-refresh"><span>1</span></i></div>
+			<form id="searchByUser">
+				<label>Search by user</label>
+				<input class="searchUser text" type="text" value="" onfocus="this.value=''" />
+				<input class="submit" type="submit" value="go">
+			</form>
+			
+			<form id="searchByLocation">
+				<label>Search by location</label>
+				<select class="searchLocation">
+					<option value="">Select One</option>
+					<option value="2550865">Boston, MA</option>
+					<option value="35558723">Paris, France</option>
+					<option value="203516">Rome, Italy</option>
+					<option value="2203135">Caesars Palace, Las Vegas</option>
+				</select>
+				<input class="submit" type="submit" value="go">
+			</form>
+			
+		
+			
 		</div>
+           
+			<div class="nav">
+                
+               
+       
+                
+			   <!-- <ul>
+		        	<li class="first active"><a href="index.html">Fullscreen</a></li>
+					<li><a href="grid.html">Grid Layout</a></li>
+					<li><a href="list.html">List Layout</a></li>
+				
+				</ul>-->
 
-		<div id="playlist">
-
-			<div id="track-details" title="Show playlist">
-				<i class="fa fa-sort"></i>
-				<p id="track-desc">There are no tracks loaded in the player.</p>
-				<p id="track-time">
-					<span id="current">-</span> / <span id="total">-</span>
-				</p>
-			</div>
-
-			<div id="expand-bar" class="hidden">
-
-				<form>
-					<label for="searchBox">Search</label><div><input id="searchBox" type="search" name="search"></div>
-				</form>
-				<ul id="list"></ul>
-			</div>
-
+		        <div class="nav-pointer">
+		            <div id="pointer-left" style="left:-12px;"></div>
+		            <div id="pointer-right" style="left:141px"></div>
+		        </div>
+		    </div>
+	
+			
 		</div>
+	
+		<div class="top-bar"></form> 
+            
+        
+        </div>
 
-	</div>
+		
+	
+		<div class="bottom-bar"><a class="close-sidebar">Close Sidebar</a></div>
+	
+		
+	
+		<div class="instagram-theatre"></div>
+	
+		
 
-	<div id="drop-zone" class="hidden">Drag &amp; Drop Files Here</div>
-
-</div>
-
-<script src="assets/js/jquery-1.11.2.min.js"></script>
-<script src="assets/js/id3-minimized.js"></script>
-<script src="assets/js/wavesurfer.min.js"></script>
-<script src="assets/js/script.js"></script>
-
-<!-- Yandex.Metrika counter -->
+		<!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function (d, w, c) {
         (w[c] = w[c] || []).push(function() {
@@ -103,6 +162,5 @@
     
     <!--LiveInternet counter--><script type="text/javascript">new Image().src = "//counter.yadro.ru/hit?r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"" : ";s"+screen.width+"*"+screen.height+"*" + (screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u"+escape(document.URL) + ";h"+escape(document.title.substring(0,80)) + ";" +Math.random();</script><!--/LiveInternet-->
     
-</body>
-
+	</body>
 </html>
