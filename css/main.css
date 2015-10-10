@@ -296,7 +296,7 @@ a.caption-close {
 }
 
 
-.opa{margin-top: 20px;
+.opa{margin-top: 25px;
     border-top: 1px solid #edeeee;}
 
 /* Customization barunlim */
@@ -308,7 +308,7 @@ a.caption-close {
 	position: absolute;
 	right: 0;
 	bottom: 0;
-	width: 250px;
+	width: 260px;
 	z-index: 200;
     display: block;
 }
@@ -353,12 +353,12 @@ a.caption-close {
 }
 
 .customization-barunlim form input.text {
-	width:180px;
+	width:190px;
 }
 
 .customization-barunlim form select {
 	font-size:12px;
-	width:180px;
+	width:190px;
 }
 
 .customization-barunlim form input.submit {
