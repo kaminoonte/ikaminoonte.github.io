@@ -1,16 +1,7 @@
-/*-----------------------------------------------------------------------
- * Version - 1.0.0
- * File    - main.css
- * Author  -  Chris Rivers
- * Usage - 
- * Description - 
- *     Main Css
- *-----------------------------------------------------------------------*/
-
 /* Rules 
 ----------------*/
 body {
-	background:  url(noise-gray.png) fixed;
+	background:  #edeeee;
 	margin-bottom:50px;
 }
 
