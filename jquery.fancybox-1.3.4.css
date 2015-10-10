@@ -124,8 +124,8 @@
 }
 
 #fancybox-frame {
-	width: 100%;
-	height: 100%;
+	width: 1024px;
+	height: 1024px
 	border: none;
 	display: block;
 }
