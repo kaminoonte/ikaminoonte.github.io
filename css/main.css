@@ -14,10 +14,7 @@ body {
 	margin-bottom:50px;
 }
 
-body.green { background: #112E10; }
-body.dark-green { background: #00280c ; }
-body.blue { background: #010028 ; }
-body.brown { background: #4b2815 ; }
+
 
 a:hover { text-decoration:none; }
 
@@ -80,7 +77,7 @@ div.sidebar-nav h1 {
     font-size: 15px;
     font-weight: bold;
     height: 170px;
-    margin: 20px auto 0;
+    margin: 5px auto 0;
     text-indent: -9999px;
     width: 240px;
 }
@@ -132,7 +129,7 @@ div.sidebar-nav .social-media img {
 }
 
 .top-bar {
-	background:none;
+	background: #30608b;
     height:40px;
 	position:absolute;
 	top:0;
@@ -140,7 +137,7 @@ div.sidebar-nav .social-media img {
 }
 
 .bottom-bar {
-	background:#41769b;
+	background:#1f4f79;
 	height:40px;
 	position:fixed;
 	bottom:0;
@@ -234,9 +231,9 @@ a.caption-close {
 -------------------------*/
 .instagram-photo {
 	display: inline-block;
-    height: 196px;
+    height: 200px;
 	margin:10px;
-    width: 195px;
+    width: 200px;
 	position:relative;
 }
 
@@ -253,11 +250,11 @@ a.caption-close {
 .instagram-photo .instagram-hover-cover p { color:#D7D7D7; line-height:17px; margin: -1px 17px 0 17px; }
 
 .instagram-theatre {
-    margin-left: 370px;
-	padding-bottom: 62px;
+    margin-left: 380px;
+	padding-bottom: 60px;
 	position: absolute;
-	top: 61px;
-    width: 863px;
+	top: 60px;
+    width: 900px;
     z-index: 99;
 }
 
