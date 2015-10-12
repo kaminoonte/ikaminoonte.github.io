@@ -120,15 +120,16 @@ div.sidebar-nav .social-media img {
 }
 
 .top-bar {
-	background: #30608b;
+	background: rgba(255,255,255,0.5);
     height:40px;
-	position:absolute;
+ z-index:100;
+	position:fixed;
 	top:0;
 	width: 100%;
 }
 
 .bottom-bar {
-	background:#1f4f79;
+	background: rgba(255,255,255,0.5);
 	height:40px;
 	position:fixed;
 	bottom:0;
@@ -136,19 +137,19 @@ div.sidebar-nav .social-media img {
 	z-index:100;
 }
 
-.bottom-bar .close-sidebar {
-	background:url("images/close-sidebar.png") no-repeat;
+.bottom-bar .close-sidebar1 {
+	background:url("https://training.github.com/images/try-git-logo.png") no-repeat;
 	cursor: pointer;
     display: inline-block;
     float: right;
-    height: 16px;
+    height: 29px;
     margin-right: 16px;
-    margin-top: 11px;
+    margin-top: 10px;
     text-indent: -9999px;
-    width: 108px;
+    width: 60px;
 }
 
-.bottom-bar .close-sidebar.closed { background:url("images/open-sidebar.png") no-repeat; }
+
 
 .caption-container {
 	background:url("images/theather-design_06.png") repeat;
