@@ -1,5 +1,5 @@
 User-agent: *
-Host: lentagram.org
+Host: kaminoonte.github.io
 
 User-agent: MediaPartners-Google
 Disallow: /redirect/
