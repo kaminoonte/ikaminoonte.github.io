@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="edge" >
+
+	<title>Vkontakte</title>
+
+	<link rel="stylesheet" href="css/style.css?1" />	
+
+	<!--[if lt IE 9]>
+	<script src="js/html5-shim.js"></script>
+	<style> 
+		.lightbox {
+	 		background:transparent;
+       		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000050,endColorstr=#99000050);
+       		zoom: 1;
+       	}
+
+       	// If did't support data-uri 
+		#header .logo { background-image: url('../images/logo.png'); }
+	</style>
+	<![endif]-->
+</head>
+<body class="not_logged">
+	<a class="btn primary" id="login_button" style="display:none">Войти Вконтакте</a>
+
+	<nav>
+		<div>
+			<div class="logo">
+				<a href="#">&nbsp;</a>
+			</div>
+			<div class="actions">
+				<a>Newsfeed</a>
+				<a>Feedback</a>
+				<a>Messages</a>
+			</div>
+
+			<input type="text" id="search" placeholder="Search..." />
+		</div>
+	</nav>
+	<article itemscope itemtype="http://schema.org/Person">					
+		<aside>
+			<script type="text/template" id="user_sidebar_template">
+				<div class="profile_image" style="background-image: url({{user.photo_big}});">
+					<img itemprop="image" src="{{user.photo_big}}"/>
+				</div>
+				
+				{{^logged_user}}
+				<div class="buttons">
+					<a href="#/user/{{user.id}}/message" class="btn primary">Send a Message</a>
+					<a href="#/user/{{user.id}}/remove" class="btn">Remove from Friends</a>
+				</div>
+				{{/logged_user}}
+
+				{{#show_navigation}}
+				<nav>
+					{{#navigation}}
+					<a href="#/user/{{user.id}}/{{type}}" class="term {{type}} {{#is_active_nav}} active {{/is_active_nav}}">
+						<span>{{name}}</span>
+						<div class="count">{{count}}</div>
+					</a>					
+					{{/navigation}}
+				</nav>
+				{{/show_navigation}}
+
+				{{#show_friends}}
+				<div class="friends">
+					<a class="term">
+						<span>Friends</span>
+						<div class="count">{{user.counters.friends}}</div>
+					</a>
+
+					<div class="user_list">
+						{{#user_friends}}
+						<a href="#/user/{{uid}}" >
+							<div class="image" style="background-image:url({{photo}})"></div>
+							<span>{{first_name}}</span>
+						</a>
+						{{/user_friends}}
+					</div>
+				</div>
+				{{/show_friends}}
+
+				{{#show_followers}}
+				<div class="followers">
+					<a class="term">
+						<span>Followers</span>
+						<div class="count">{{user.counters.followers}}</div>
+					</a>
+
+					<div class="user_list">
+						{{#user_followers}}
+						<a href="#/user/{{uid}}">
+							<div class="image" style="background-image:url({{photo}})"></div>
+							<span>{{first_name}}</span>
+						</a>
+						{{/user_followers}}
+					</div>
+				</div>
+				{{/show_followers}}
+			</script>
+		</aside>
+
+		<section class="profile" style="display: none">
+			<script type="text/template" id="user_profile_template">
+				<div class="info">
+					{{#user}}
+					<h1 itemprop="name">{{full_name}}</h1>
+					<div class="quote">{{{activity}}}</div>
+
+					<ul>
+						{{#birthday}}
+						<li>
+							<label>Birthday:</label>
+							<a itemprop="birthDate">{{birthday}}</a>
+						</li>
+						{{/birthday}}
+
+						{{#relationship}}
+						<li>
+							<label>Relationship status:</label>
+							<a itemprop="relationship">{{relationship}}</a>
+						</li>
+						{{/relationship}}
+						<li class="show_all">
+							<label></label>
+							<a title="Show more">Show more about {{first_name}}</a>
+						</li>		
+					</ul>
+					{{/user}}
+				</div>
+
+				{{#have_photos}}				
+				<div class="photos">
+					<div class="well">
+						<h3>Photos</h3>
+						<a href="#/user/{{user.id}}/photos" class="all_photos">View all Photos</a>
+					</div>
+				</div>				
+					
+				<ul class="images">
+					{{#user_photos}}
+					<li>
+						<a data-src="{{orig_src}}" data-photo="{{pid}}" title="{{text}}">
+							<div class="image" style="background-image: url({{src}})"></div>
+						</a>
+					</li>
+					{{/user_photos}}
+				</ul>
+				<div style="clear:both"></div>
+				{{/have_photos}}
+
+				<div class="well new_message">
+					<input type="text" placeholder="Write a public message..." />
+				</div>
+
+				<div class="wall"></div>
+			</script>			
+		</section>
+
+		<section class="photos" style="display: none">
+			<script type="text/template" id="user_photos_template">
+				<header>
+					<a class="back btn"><b>‹</b>Back to Profile</a>
+
+					<span class="info">
+						<span class="photos">{{photos_count}} photos</span><a class="albums">{{albums_count}} albums</a>
+					</span>
+				</header>
+				<ul class="images" data-count="{{photos_count}}">
+					{{#user_photos}}
+					<li>
+						{{^is_stub}}
+						<a data-src="{{orig_src}}" data-photo="{{pid}}" title="{{text}}">
+							<div class="image" style="background-image: url({{src}})"></div>
+						</a>
+						{{/is_stub}}
+					</li>
+					{{/user_photos}}
+				</ul>
+			</script>
+		</section>
+	</article>
+
+	<footer></footer>	
+
+	<script type="text/template" id="user_wall_template">
+		{{#posts}}
+			<div class="post">					
+			{{#messages}}
+				<article {{^date}}class="stub"{{/date}}>
+					{{#user_comment}}
+					<a href="#/user/{{id}}" class="user_image">
+						<div class="image" style="background-image: url({{photo}});"></div>
+					</a>				
+					<a href="#/user/{{id}}" class="author">{{full_name}}</a>
+					{{/user_comment}}
+
+					<p>{{{text}}}</p>
+					
+					{{#has_attachment}}
+					<ul class="attachments">
+						{{#attachments}}
+							<li class="{{type}}">{{{attachment_preview}}}</li>
+						{{/attachments}}
+					</ul>
+					{{/has_attachment}}
+
+					<div class="info">
+						<span class="time">{{formated_date}}</span>
+						<a class="favorite count_{{likes_count}}" title="Mark as Favorite">{{likes_count}}</a>
+					</div>
+				</article>
+							
+				{{#is_closed}}
+					{{#more_then_three_comments}}			
+						<a class="well show_all" data-post="{{to_id}}_{{id}}">Show all {{comments.count}} replies</a>
+					{{/more_then_three_comments}}
+				{{/is_closed}}
+			{{/messages}}
+			</div>
+		{{/posts}}
+	</script>
+
+	<script type="text/template" id="lightbox_template">
+		<a class='back' title="Back"></a>
+		<a class='close' title="Close">×</a>
+		<span class='window'>
+			<span class='content'>
+			{{#is_photo}}
+				<img src='{{src}}' />				
+			{{/is_photo}}
+			{{#is_video}}
+				<iframe src="http://vkontakte.ru/video_ext.php?oid={{owner_id}}&id={{video}}&hash=4734447340036429&hd=1" width="607" height="360" frameborder="0"></iframe>
+			{{/is_video}}
+			</span>
+			{{#show_info}}
+			<div class="info">
+				<span class="text">{{{text}}}</span>
+				{{^one_element}}
+				<span class="count">Photo {{current_index}} of {{elements_count}}</span>
+				{{/one_element}}
+			</div>
+			{{/show_info}}
+		</span>
+	</script>
+
+
+	<script type="text/javascript" src="js/background_noise.js"></script>
+	<script type="text/javascript" src="js/ender.min.js"></script>
+	<script type="text/javascript" src="js/store.js"></script>
+	<script type="text/javascript" src="js/underscore.min.js"></script>
+	<script type="text/javascript" src="js/backbone.min.js"></script>
+	<script type="text/javascript" src="js/mustache.js"></script>
+
+	<script type="text/javascript" src="js/application.js?9"></script>
+</body>
+</html>
