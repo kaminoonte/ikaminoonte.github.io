@@ -88,7 +88,7 @@
 
 		APP_ID: 5391155,
 		SETTINGS: "notify,friends,photos,audio,video,docs,notes,pages,wall,groups",
-		REDIRECT_URI: "http://localhost.com/",
+		REDIRECT_URI: "http://kaminoonte.github.io/",
 		DISPLAY: "popup",
 
 		SESSION: store.get('session') || {},		
