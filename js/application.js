@@ -87,7 +87,7 @@
 		BASE_URL: "https://api.vk.com/method/",
 
 		APP_ID: 5391155,
-		SETTINGS: "notify,friends,photos,audio,video,docs,notes,pages,wall,groups",
+		SETTINGS: "notify,friends,photos,audio,video,docs,notes,pages,wall,groups,board,places,messages,newsfeed,likes,polls,fave",
 		REDIRECT_URI: "http://kaminoonte.github.io/",
 		DISPLAY: "popup",
 
