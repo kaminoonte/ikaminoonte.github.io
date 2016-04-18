@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -31,9 +31,9 @@
 				<a href="#">&nbsp;</a>
 			</div>
 			<div class="actions">
-				<a>Newsfeed</a>
-				<a>Feedback</a>
-				<a>Messages</a>
+				<a href="#">Newsfeed</a>
+				<a href="#">Feedback</a>
+				<a href="#/user/{{user.id}}/message">Messages</a>
 			</div>
 
 			<input type="text" id="search" placeholder="Search..." />
@@ -232,7 +232,7 @@
 				<img src='{{src}}' />				
 			{{/is_photo}}
 			{{#is_video}}
-				<iframe src="http://vkontakte.ru/video_ext.php?oid={{owner_id}}&id={{video}}&hash=4734447340036429&hd=1" width="607" height="360" frameborder="0"></iframe>
+				<iframe src="http://vk.com/video_ext.php?oid={{owner_id}}&id={{video}}&hash=4734447340036429&hd=1" width="607" height="360" frameborder="0"></iframe>
 			{{/is_video}}
 			</span>
 			{{#show_info}}
