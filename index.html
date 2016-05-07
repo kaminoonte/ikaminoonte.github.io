@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Record Online Player</title>
+<link rel="stylesheet" href="style.css" />
+<link href="main.css" type="text/css"  data-template-style="true"  rel="stylesheet" />
+
+    <link rel="stylesheet" href="http://www.radiorecord.ru/i/fonts/record/css/record.css?1" />
+    <script src="http://www.radiorecord.ru/i/js/jquery-2.1.0.min.js"></script>
+    <script src="http://www.radiorecord.ru/i/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+    <script src="http://www.radiorecord.ru/i/js/jquery.Storage.js"></script>
+    <link rel="stylesheet" href="http://www.radiorecord.ru/i/css/font-awesome/css/font-awesome.min.css" />
+    <script src="http://www.radiorecord.ru/bitrix/templates/flat-new/js/soundmanagerv297a-20150601/script/soundmanager2.js"></script>
+    <script src="http://www.radiorecord.ru/bitrix/templates/flat-new/js/jquery.record.js?"></script>
+            
+
+	</head>
+	<body>
+        <style type="text/css">
+html, body {
+    background: url('http://www.radiorecord.ru/upload/iblock/294/294294554bd5ac1092e0bb7f62120c37.jpg') #ededef  repeat-x;
+    background-position: center 0px;
+}
+</style>
+
+<script>
+	console.log('<?=$_REQUEST['viewer_id'];?>');
+</script>	
+                     
+
+<div class="index-wrap">
+		<header>
+		<div class="player current-station-background-color" style="z-index: 201;">
+			<div class="wrapper">
+				<a class="logo pull-left">
+					<div class="logo-rr-container"></div>
+				</a>
+				<div class="play-pause loading noselect pull-left">
+					<span class="icon-station-play"></span>
+					<i class="fa fa-spinner fa-spin"></i>
+				</div>
+				<div id="nowplay-image" class="pull-left" current="rr"></div>
+
+			
+					<div class="textinfo pull-left">
+						<div id="nowplay-station" class="current-station-font-color current-station-name">Record Dance Radio</div>
+						<div id="nowplay-artist"></div>
+						<div id="nowplay-title"></div>
+					</div>
+				
+				<!--<div id="volume-slider"></div>-->
+				<div class="like_in">
+					<a href="#" class="vk_link" target="_blank">
+						<div><i class="icon-vk"></i><span>Найти</span></div>
+					</a>
+					<a href="javascript:" >
+						<div class="vk_add"><i class="icon-share"></i><span>Поделиться</span></div>
+					</a>
+					<a href="javascript:" >
+						<div class="fb_add"><i class="fa fa-facebook"></i><span>Поделиться</span></div>
+					</a>
+					<a class="itunes_link" target="_blank" href="">
+						<div><i class="icon-station-itunes"></i><span>Купить</span></div>
+					</a>
+
+				</div>
+				<div class="top-buttons pull-right" >
+					<!--<div class="vk_plus pull-left current-station-border-color current-station-font-color noselect"><i class="icon-vkplus noopacity"></i></div>
+
+					<div class="bitrate-changer current-station-border-color pull-left noselect tooltip" title="Сменить качество"><i class="icon-hq noopacity active"></i></div>-->
+					<div  class="like-top-menu pull-left current-station-border-color current-station-font-color tooltip_like noselect tooltip" title="Этот трек — супер!!"><i class="icon-station-like"></i></div>
+
+                    
+                   
+					
+				
+					<div class="all-stations-menu"><div class="all-stations-dropdown"><table><tr><td id="rr"></td<td id="mix"></td><td id="deep"></td><td id="club"></td><td id="fut"></td><td id="tm"></td><td id="chil"></td><td id="mini"></td><td id="ps"></td><td id="rus"></td><td id="vip"></td><td id="sd90"></td><td id="brks"></td><td id="dub"></td><td id="dc"></td><td id="techno"></td><td id="teo"></td><td id="trap"></td><td id="pump"></td><td id="rock"></td><td id="mdl"></td><td id="gop"></td><td id="yo"></td><td id="rave"></td></tr></table></div></div>
+				</div>
+				<script>
+
+					$(function(){footer_fix();});
+		
+					$(function(){if (isMobile(/iPhone|iPad|iPod/i)) $('#volume-slider').css('display','none'); });
+
+					var footer_fix = function () {
+			
+						var $loc = location.pathname;
+						var $links = $('table.foo_menu td > a');
+						$links.removeClass('selected');
+
+						$.each($links,function(){
+						
+							if($(this).attr('href') == $loc) {
+							$(this).addClass('selected');							
+							return false;
+							}
+						});
+
+						//console.log('fchanged3');						
+					}
+
+					window.currentInstance = new Date().getTime();
+
+					setInterval(function(){
+
+						if (window.localStorage.currentPlayer && window.localStorage.currentPlayer != window.currentInstance) {
+							stop_play();
+						};
+
+					}, 1000);
+
+					// init station vars
+					window.current_station = 0;
+					if (getParameterByName('st')) { window.current_station = prefixes.indexOf(getParameterByName('st')); }
+
+					var current_bitrate = 'hq';
+					var is_now_update = 0;
+
+					// bind events
+					$(document).on('soundManagerStop soundManagerStart soundManagerResume soundManagerPause soundManagerReady', function() {
+						update_views();
+					});
+
+					$(document).on('soundManagerReady', function(mySMSound) {
+						$('.player .play-pause').removeClass('loading').addClass('ready');
+					});
+
+					$(document).on('click', '.player .play-pause.ready', function() {
+						if ($(this).hasClass('play')) {
+							$(this).removeClass('play');
+							stop_play();
+						}
+						else {
+							$(this).addClass('play');
+							start_play(stations[prefixes[current_station]][current_bitrate]);
+						}
+						update_views();
+					});
+
+					$(document).on('click', '.open-popup-player', function() {
+						stop_play();
+						playerWin = window.open('/player-mini/?st='+prefixes[current_station], 'Player', 'width=240,height=300,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no');
+						playerWin.focus();
+						return false;
+					});
+
+					$(document).on('click', '.all-stations-dropdown td', function(e) {
+						e.stopPropagation();
+						current_station = prefixes.indexOf($(this).attr("id"));
+						start_play(stations[prefixes[current_station]][current_bitrate]);
+						update_views();
+
+						if (window.location.pathname == '/radio/stations/') {
+							window.history.pushState({"html":$('#pjax-container').html(),"pageTitle":stations[prefixes[current_station]]['name']}, stations[prefixes[current_station]]['name'], '/radio/stations/?st='+prefixes[current_station]);
+							$('.tab-buttons .tab.active').trigger('click');
+						}
+					});
+
+					$(document).on('click', '#nowplay-station', function() {
+						$('.all-stations td#'+prefixes[current_station]).trigger('click');
+					});
+
+					$(document).on('click', '.all-stations td:not(#more)', function(e) {
+
+						if(!$(this).hasClass('active')) {
+						current_station = prefixes.indexOf($(this).attr('id'));
+						$('.all-stations-dropdown td#'+prefixes[current_station]).trigger('click');
+						} else {
+
+							$(this).removeClass('active');
+							$('.play-pause.play').trigger('click');
+						}
+						
+					});
+
+					function update_views() {
+
+						$("#station-page-detail .heading .tab-buttons .tab.active").css("border", "2px "+ stations[prefixes[current_station]]["fcolor"] +"solid")
+						$('#nowplay-artist').html('');
+						$('#nowplay-title').html('');
+						$('.nowplay-big-image').html('<img src="//www.radiorecord.ru/bitrix/templates/flat-new/img/transparent.png" />').removeClass('valid');
+						$('.fake-heading').css('background-image', 'url("/bitrix/templates/flat-new/img/back_cover.jpg")');
+						$(".into_station").attr("href", "/radio/stations/?st="+prefixes[current_station]);
+						$('#nowplay-image').attr('current', prefixes[current_station]);
+						$('.current-station-background-color').css('background-color', stations[prefixes[current_station]]['color']);
+						$('.current-station-font-color').css('color', stations[prefixes[current_station]]['fcolor']);
+						$('.current-station-name').html(stations[prefixes[current_station]]['name']);
+						$('.current-station-icon').removeClass().addClass('icon-st-'+prefixes[current_station]).addClass('current-station-font-color current-station-icon');
+						$('.current-station-border-color').css('border-color', stations[prefixes[current_station]]['bcolor']);
+						$('.current-station-subject').html(stations[prefixes[current_station]]['text']);
+
+						if (window.globalSound && window.globalSound.playState && window.globalSound.url.match("^http://air")) {	// if play
+							// heading updaters
+							$('.all-stations-dropdown td[id="'+prefixes[current_station]+'"]').addClass('active');
+							$('.all-stations td[id="'+prefixes[current_station]+'"]').addClass('active');
+							$('.player .play-pause.ready').children('span').addClass('icon-station-pause').removeClass('icon-station-play');
+							$('.player .play-pause.ready').addClass('play');
+						}
+						else {	// if stop
+							$('.player .play-pause.ready').children('span').removeClass('icon-station-pause').addClass('icon-station-play');
+							$('.all-stations-dropdown td').removeClass('active');
+							$('.all-stations td').removeClass('active');
+							$('.player .play-pause.ready').removeClass('play');
+						}
+
+						if (prefixes[current_station] == 'mix') {
+							$('.tab-buttons .tab.history').hide();
+						}
+						else {
+							$('.tab-buttons .tab.top100, .tab-buttons .tab.history').show();
+						}
+
+						$(document).trigger('currentStationChanged', {'station': prefixes[current_station]});
+
+						update_track_inline();
+					}
+
+
+					function update_track_inline() {
+						
+						var $status ='';
+
+						var artist = "";
+						var track = "";
+
+						if (!$('#nowplay-artist').hasClass('block_to_update')) {
+							$('#nowplay-artist').addClass('block_to_update');
+
+							var $pl_link = stations[prefixes[current_station]]['link'];
+							var $rnumber = 1 + Math.floor(Math.random() * 9999999);
+							$pl_link = $pl_link + '?' + $rnumber;
+							//var $jjson = $.getJSON($pl_link);							
+
+							//console.log($pl_link + '?' + $rnumber);
+								
+							console.log($pl_link);
+
+							$.getJSON($pl_link, function(data) {								
+								var items = [];
+                                                                  var $ddata = JSON.parse('"' + data + '"');
+									console.log($ddata);
+								//if($ddata.length == 15 && $ddata) {
+								if($ddata) {										 					
+								$.each(data, function(key, val) {
+								//console.log(key);				
+									
+									if (key == 'artist' || key == 'ARTIST' && $('#nowplay-artist').html() != val) {										
+
+										console.log($('.textinfo #nowplay-artist').html());
+										console.log('newSonger: ' + val);
+										artist = val;
+										if (prefixes[current_station]=="mix") {
+											val = "By "+ val;
+											$('#nowplay-artist').html(val);
+										}
+										else{
+											resetLike();
+									 		$('#nowplay-artist').html(val);
+									 	}
+									}
+									if (key == 'title'  || key == 'NAME' && $('#nowplay-title').html() != val) {
+										track = val;
+										$('#nowplay-title').html(val);
+									}
+									if (key == 'image100' || key == 'image') {
+										if (val == null) { $('#nowplay-image').html('<i style="width: 100px; color: '+stations[prefixes[current_station]]['fcolor']+';" class="icon-st-'+prefixes[current_station]+'"></i>').css('background-image', 'url(/bitrix/templates/flat-new/img/black40.png)').removeClass('valid'); }
+										else { if ($('#nowplay-image img').attr('src') != val) { $('#nowplay-image').html('<img src="'+val+'" />').addClass('valid'); } }
+									}
+									if (key == 'image600') {
+										if (val == null) {
+											$('.nowplay-big-image').html('<img src="//www.radiorecord.ru/bitrix/templates/flat-new/img/transparent.png" />').removeClass('valid');
+											$('.fake-heading').css('background-image', 'url("/bitrix/templates/flat-new/img/back_cover.jpg")');
+										}
+										else {
+											if ($('.nowplay-big-image img').attr('src') != val) {
+												$('.nowplay-big-image').html('<img src="'+val+'" />').addClass('valid');
+												$('.fake-heading').css('background-image', 'url("'+val+'")');
+											}
+										}
+									}
+									if (key == 'itunesURL') {
+										if (val == null) {
+											$('.itunes_link').hide();
+										}
+										else {
+											$('.itunes_link').show();
+											$(".itunes_link").attr("href", val);
+										}
+									}
+
+								}); start_updater(5000); } 
+								
+							}).fail(function(jqxhr, textStatus, error){
+								console.log('fail getJson'); 
+								//var err = textStatus + ', ' + error;
+								console.log( "Request Failed: " + jqxhr);
+								start_updater(15000, 'failjson'); 
+							
+							});
+
+							$('#nowplay-artist').removeClass('block_to_update');
+							$('#nowplay-image img').removeClass('loading');
+						}
+
+						var trackName = $('#nowplay-artist').html()+" - "+$('#nowplay-title').html();
+						if (trackName!=" - ") {
+							$(".vk_link").attr("href", "https://vk.com/search?c%5Bq%5D="+ encodeURIComponent(trackName) +"&c%5Bsection%5D=audio")
+						}
+					}
+
+					function start_updater($time,$status) {						
+	
+						if(window.updaterIntervalID) clearInterval(window.updaterIntervalID);
+						if (!$time) var $time = 8000;
+						console.log($time);
+						window.updaterIntervalID = setInterval("update_track_inline();",$time);
+					}
+
+					start_updater(1000);
+					update_views();
+
+					$(function() {
+						var slider = $('#volume-slider');
+						slider.slider({
+							range: "min",
+							min: 1,
+							max: 100,
+							value: getVolume(),
+							orientation: 'horizontal',
+							start: function(event,ui) {},
+							slide: function(event, ui) {
+								var value = slider.slider('value');
+								setVolume(value);
+							},
+							change: function(event, ui) {
+								var value = slider.slider('value');
+								setVolume(value);
+							},
+							stop: function(event,ui) {
+								//tooltip.fadeOut('fast');
+							},
+						});
+
+						$('.tooltip').tooltipster({
+							animation: 'fade',
+							delay: 0,
+							theme: 'tooltipster-light',
+							touchDevices: false,
+							trigger: 'hover'
+						});
+
+						init_chartfresh();
+					});
+
+					function changeCurrentStation(prefix) {
+						current_station = prefixes.indexOf(prefix);
+						update_views();
+					}
+
+					function getParameterByName(name) {
+						name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+						var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+						results = regex.exec(location.search);
+						return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+
+						/*var result = "Not found",
+						        tmp = [];
+						    location.search
+						    //.replace ( "?", "" )
+						    // this is better, there might be a question mark inside
+						    .substr(1)
+						        .split("&")
+						        .forEach(function (item) {
+						        tmp = item.split("=");
+						        if (tmp[0] === name) result = decodeURIComponent(tmp[1]);
+						    });
+						    return result;*/
+
+					}
+
+					$(document).off('contentLoaded');
+					$(document).on("contentLoaded", function() {
+						if (window.globalSound && window.globalSound.playState && window.globalSound.url && !window.globalSound.url.match("^http://air")) {
+							stop_play();
+						}
+						init_chartfresh();
+						update_views();
+						footer_fix();
+					});
+
+					function init_chartfresh() {
+						$('#programm-block table.player').off('click', '.play_pause')
+						$('#programm-block table.player').on('click', '.play_pause', function() {
+							if(isMobile()) {
+								window.location.href = $(this).attr('item_url');
+							}
+							else {
+								itemControllActive = $(this).closest('table.player');
+								if ($(this).hasClass('play')) {
+									stop_play();
+								}
+								else {
+									start_play($(this).attr('item_url'), 'superchart');
+									$(this).addClass('play');
+									$(this).closest('table.player').addClass('active');
+								}
+							}
+						});
+
+						$(document).on('soundManagerStop', function(event, radio) {
+							$('#programm-block table.player').find('td.play_pause').removeClass('play');
+							$('#programm-block table.player').removeClass('active');
+						});
+					}
+
+					$(document).on('click', '.all-stations-menu', function(e) {
+						e.stopPropagation();
+						$(this).children('.all-stations-dropdown').toggle();
+						$(this).toggleClass('active');
+						hideLike();
+					});
+
+					$(document).on('click', '.like-top-menu', function(e) {
+						e.stopPropagation();
+						hideStations();
+						$(this).css("color", "#FFAE00");
+						$(".like_in").toggle();
+					});
+
+					$(document).on('click', function() { hideStations(); hideLike(); });
+
+					function hideStations() {
+						$(".index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown").hide();
+						$(".top-buttons .all-stations-menu").removeClass("active");
+					}
+
+					function hideLike() {
+						$(".like_in").hide();
+					}
+
+					function resetLike() {
+						$(".like-top-menu").css("color", "rgb(188, 193, 194)");
+					}
+
+					$(document).on('click', '.vk_add', function() {
+						var artist = $('#nowplay-artist').text();
+						var name = $('#nowplay-title').text();
+						var image = $('#nowplay-image img').attr('src');
+
+						if(artist!='Record Dance Radio') {
+							//ga('send', 'event', 'LikeAudio', 'record', artist+' - '+name);
+						}
+
+						artist = encodeURIComponent(artist);
+						name = encodeURIComponent(name);
+						image = encodeURIComponent(image);
+						if (image === 'undefined') { image = 'http://radiorecord.ru/vk_pic.jpg'; }
+
+						var ttt = "http://vkontakte.ru/share.php?url=http://vk.com/audio?q=";
+						var ttt2 = encodeURIComponent(" - ");
+						var ttt3 = encodeURIComponent("Мне нравится ");
+						var ttt4 = encodeURIComponent(" на РАДИО РЕКОРД!");
+						var ttt5 = encodeURIComponent("Кликайте и добавляйте!");
+						var link_text = ttt+artist+ttt2+name+"&title="+ttt3+artist+ttt2+name+ttt4+"&description="+ttt5+"&image="+image+"&noparse=1";
+						window.open(link_text,'popup', 'width=640,height=520')
+					});
+
+					$(document).on('click', '.fb_add', function() {
+						var artist = $('#nowplay-artist').text();
+						var name = $('#nowplay-title').text();
+						var image = $('#nowplay-image img').attr('src');
+
+						if(artist!='Record Dance Radio') {
+							//ga('send', 'event', 'LikeAudio', 'record', artist+' - '+name);
+						}
+
+						artist = encodeURIComponent(artist);
+						name = encodeURIComponent(name);
+						image = encodeURIComponent(image);
+						if (image === 'undefined') { image = 'http://radiorecord.ru/vk_pic.jpg'; }
+
+						var ttt = "https://www.facebook.com/dialog/feed?app_id=1423433514596180&display=popup&caption="+encodeURIComponent("Радио Рекорд - №1 Dance Radio")+"&link=http://www.radiorecord.ru";
+						var ttt2 = encodeURIComponent(" - ");
+						var ttt3 = encodeURIComponent("Мне нравится ");
+						var ttt4 = encodeURIComponent(" на РАДИО РЕКОРД!");
+						var ttt5 = encodeURIComponent("Кликайте и добавляйте!");
+						var link_text = ttt+"&name="+ttt3+artist+ttt2+name+ttt4+"&description="+ttt5+"&picture="+image+"&redirect_uri=http://radiorecord.ru/fb_callback.php";
+						var windowFB = window.open(link_text,'popup', 'width=640,height=520');
+
+					});
+
+
+
+					$(document).on('soundManagerFinish', function(event) {
+						var el = $('.play_pause.play').parent().next().find(".play_pause");
+						if (!el.length) {
+							el = $('.play_pause.play').closest("article").nextAll("article:not(.hidden)");
+							el = el[0];
+							el = $(el).find(".play_pause");
+						};
+						$(document).trigger('soundManagerStop');
+						el.trigger("click");
+						console.log("Конец");
+					});
+
+
+					$(document).on("click", ".left_column .player_grid table.all-stations td#more", function(e){
+						$(this).closest("table").find(".more_station").removeClass("hidden");
+						$(this).addClass("clicked");
+
+					})
+
+					$(document).on("click", ".left_column .player_grid table.all-stations td#more.clicked", function(e){
+						$(this).closest("table").find(".more_station").addClass("hidden");
+						$(this).removeClass("clicked");
+					})
+
+				</script>
+			</div>
+		</div>
+        </header>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+      <table class="wrapper">
+		
+			
+		<td class="pole_left"><span style="display: top center;">
+<script type="text/javascript">(function() {
+  if (window.pluso)if (typeof window.pluso.start == "function") return;
+  if (window.ifpluso==undefined) { window.ifpluso = 1;
+    var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+    s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+    s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+    var h=d[g]('body')[0];
+    h.appendChild(s);
+  }})();</script>
+<div class="pluso" data-background="transparent" data-options="medium,round,line,vertical,counter,theme=02" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir" data-url="http://lentagram.org" data-title="Record Online Player" data-description="№1 Dance Radio"></div>
+</span>
+
+	
+		</td>
+		<td class="pole_content">
+			<div class="vkla radio">
+                
+           
+		<div class="main-content player_grid">
+
+			<table class="all-stations">
+				<tr>
+					<td id="rr"><span>Radio&nbsp;Record</span></td>
+					<td id="mix"><span>Megamix</span></td>
+					<td id="deep"><span>Record&nbsp;Deep</span></td>
+					<td id="club"><span>Record&nbsp;Club</span></td>
+					<td id="fut"><span>Future&nbsp;House</span></td>
+					<td id="tm"><span>Trancemission</span></td>
+					<td id="chil"><span>Record&nbsp;Chill-Out</span></td>
+				</tr>
+				<tr>
+					<td id="mini"><span>Minimal/Tech</span></td>
+					<td id="ps"><span>Pirate&nbsp;Station</span></td>
+					<td id="rus"><span>Russian&nbsp;Mix</span></td>
+					<td id="vip"><span>Vip&nbsp;House</span></td>
+					<td id="sd90"><span>Супердиско&nbsp;90-х</span></td>
+					<td id="brks"><span>Record&nbsp;Breaks</span></td>
+					<td id="dub"><span>Record&nbsp;Dubstep</span></td>
+					
+				</tr>
+				<tr>
+					<td id="dc"><span>Record&nbsp;Dancecore</span></td>
+					<td id="techno"><span>Record&nbsp;Techno</span></td>
+					<td id="teo"><span>Record&nbsp;Hardstyle</span></td>
+					<td id="trap"><span>Record&nbsp;Trap</span></td>
+					<td id="pump"><span>Pump</span></td>
+					<td id="rock"><span>Record&nbsp;Rock</span></td>
+		
+						
+                    <td id="mdl"><span>Медляк&nbsp;FM</span></td> </tr><tr>
+					<td id="gop"><span>Гоп&nbsp;FM</span></td>
+					<td id="yo"><span>Yo!FM</span></td>
+					<td id="rave"><span>Rave FM</span></td>				
+				</tr>
+			</table>
+
+		</div>
+
+			</div>
+			
+			
+			<div class="vkla playlist-detail"></div>
+			<div class="vkla history"></div>
+			<div class="vkla top100"></div>
+			
+		</td>
+		
+		</table>
+		<script src="//www.radiorecord.ru/i/js/openapi.js"></script>
+		<script src="//vk.com/js/api/xd_connection.js?2" type="text/javascript"></script>
+		<script>VK.init({apiId: 3733168, onlyWidgets: true});</script>
+		
+		
+		<script src="//www.radiorecord.ru/i/js/jquery.easing.1.3.js"></script>
+		<script src="//www.radiorecord.ru/i/js/jquery.Storage.js"></script>
+	
+	
+	
+		<script type="text/javascript">
+			(function(win, doc, cb){
+				(win[cb] = win[cb] || []).push(function() {
+					try {
+						tnsCounterRadiorecord_ru = new TNS.TnsCounter({
+						'account':'radiorecord_ru',
+						'tmsec': 'radiorecord_total'
+						});
+					} catch(e){}
+				});
+
+				var tnsscript = doc.createElement('script');
+				tnsscript.type = 'text/javascript';
+				tnsscript.async = true;
+				tnsscript.src = ('https:' == doc.location.protocol ? 'https:' : 'http:') + 
+					'//www.tns-counter.ru/tcounter.js';
+				var s = doc.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(tnsscript, s);
+			})(window, this.document,'tnscounter_callback');
+		</script>
+		<noscript>
+			<img src="//www.tns-counter.ru/V13a****radiorecord_ru/ru/UTF-8/tmsec=radiorecord_total/" width="0" height="0" alt="" />
+		</noscript>
+		
+	</body>
+</html>

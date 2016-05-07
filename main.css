@@ -1,0 +1,361 @@
+html{width: 0 auto;color:#000;background:#404040}
+body,div,dl,dt,dd,ul,ol,li,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{margin:0;padding:0;font-size:100%;font-weight:normal}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit;font-weight:inherit;font-size:100%;}
+legend{color:#000}
+/* end of YUI CSS Reset */
+@font-face {
+    font-family: 'pf_dintext_pro';
+    src: url(http://www.radiorecord.ru/i/fonts/pfdintextpro-bold-webfont.eot);
+    src: url(http://www.radiorecord.ru/i/fonts/pfdintextpro-bold-webfont.eot?#iefix) format('embedded-opentype'),
+         url(http://www.radiorecord.ru/i/fonts/pfdintextpro-bold-webfont.woff) format('woff'),
+         url(http://www.radiorecord.ru/i/fonts/pfdintextpro-bold-webfont.ttf) format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pf_dintext_pro';
+    src: url(http://www.radiorecord.ru/i/fonts/pfdintextpro-regular-webfont.eot);
+    src: url(http://www.radiorecord.ru/i/fonts/pfdintextpro-regular-webfont.eot?#iefix) format('embedded-opentype'),
+         url(http://www.radiorecord.ru/i/fonts/pfdintextpro-regular-webfont.woff) format('woff'),
+         url(http://www.radiorecord.ru/i/fonts/pfdintextpro-regular-webfont.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pf_dintext_pro';
+    src: url(http://www.radiorecord.ru/i/fonts/pfdintextpro-thin-webfont.eot);
+    src: url(http://www.radiorecord.ru/i/fonts/pfdintextpro-thin-webfont.eot?#iefix) format('embedded-opentype'),
+         url(http://www.radiorecord.ru/i/fonts/pfdintextpro-thin-webfont.woff) format('woff'),
+         url(http://www.radiorecord.ru/i/fonts/pfdintextpro-thin-webfont.ttf) format('truetype');
+    font-weight: lighter;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Gotham Pro';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Gotham Pro Bold'), url('http://www.radiorecord.ru/i/fonts/GothaProBol.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Gotham Pro Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Pro Medium'), url('http://www.radiorecord.ru/i/fonts/GothaProMed.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Gotham Pro Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Pro Regular'), url('http://www.radiorecord.ru/i/fonts/GothaProReg.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Gotham Pro';
+    font-style: normal;
+    font-weight: lighter;
+    src: local('Gotham Pro Light'), url('http://www.radiorecord.ru/i/fonts/GothaProLig.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: local('OpenSans-Bold'),
+        url(http://www.radiorecord.ru/i/fonts/Open_Sans/OpenSans-Bold.eot) format('embedded-opentype'),
+        url(http://www.radiorecord.ru/i/fonts/Open_Sans/OpenSans-Bold.woff) format('woff'),
+        url(http://www.radiorecord.ru/i/fonts/Open_Sans/OpenSans-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: local('OpenSans-Regular'),
+        url(http://www.radiorecord.ru/i/fonts/Open_Sans/OpenSans-Regular.eot) format('embedded-opentype'),
+        url(http://www.radiorecord.ru/i/fonts/Open_Sans/OpenSans-Regular.woff) format('woff'),
+        url(http://www.radiorecord.ru/i/fonts/Open_Sans/OpenSans-Regular.ttf) format('truetype');
+}
+
+
+
+
+
+
+.index-wrap { margin:  0; padding:0;   background-position: top left; background-repeat: repeat-x; overflow: hidden;  }
+.index-wrap:after { content: " "; display: block; }
+
+
+.clear { clear: both; }
+.mfp-zoom-out-cur { cursor: default; }
+.mfp-zoom-out-cur .mfp-image-holder .mfp-close { cursor: pointer; }
+
+.index-wrap .container { width: 760px; margin: 0; position: relative;}
+.index-wrap .container .logo { position: absolute; margin:  0; }
+.index-wrap .container .logo a { display: block; }
+
+
+.index-wrap header { margin:  0; padding:0;  width: 758px; z-index: 500; }
+.index-wrap header.fix { z-index: 450;  width: 760px; margin-top: 0; top: 0; }
+.index-wrap header .player { top: 0px; width: 100%; height: 55px; background-color: #2a2d2e; }
+.index-wrap header .player .wrapper { width: 760px; height: 55px; margin: 0 ; position: relative; }
+.index-wrap header .player .wrapper_3px { position: relative; width: 760px; height: 3px; margin: 0 auto; overflow: hidden; background-image: url('http://www.radiorecord.ru/bitrix/templates/flat/img/3px.png'); margin-top: -3px; background-repeat: repeat; }
+.index-wrap header .player .play-pause { cursor: pointer; width: 55px; height: 55px; text-align: center; line-height: 55px; color: white; font-size: 26px; background-color: #FFAE00; }
+.index-wrap header .player .play-pause i { display: none; }
+.index-wrap header .player .play-pause.ready:hover { opacity: 0.9; /*color: #67d0f7;*/ }
+.index-wrap header .player .play-pause.loading span { display: none; }
+.index-wrap header .player .play-pause.loading i { display: inline; }
+.index-wrap header .player #nowplay-image { width: 55px; height: 55px; background-size: cover; font-size: 53px; text-align: center; line-height: 55px;}
+.index-wrap header .player a.into_station { display: block; }
+
+
+/*
+.index-wrap header .player #nowplay-image[current="rr"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-rr.png'); }
+.index-wrap header .player #nowplay-image[current="sd90"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-sd90.png'); }
+.index-wrap header .player #nowplay-image[current="tm"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-tm.png'); }
+.index-wrap header .player #nowplay-image[current="rus"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-rus.png'); }
+.index-wrap header .player #nowplay-image[current="mdl"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-mdl.png'); }
+.index-wrap header .player #nowplay-image[current="chil"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-chil.png'); }
+.index-wrap header .player #nowplay-image[current="club"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-club.png'); }
+.index-wrap header .player #nowplay-image[current="gop"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-gop.png'); }
+.index-wrap header .player #nowplay-image[current="vip"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-vip.png'); }
+.index-wrap header .player #nowplay-image[current="ps"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-ps.png'); }
+.index-wrap header .player #nowplay-image[current="deep"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-deep.png'); }
+.index-wrap header .player #nowplay-image[current="brks"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-brks.png'); }
+.index-wrap header .player #nowplay-image[current="dc"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-dc.png'); }
+.index-wrap header .player #nowplay-image[current="dub"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-dub.png'); }
+.index-wrap header .player #nowplay-image[current="trap"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-trap.png'); }
+.index-wrap header .player #nowplay-image[current="teo"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-teo.png'); }
+.index-wrap header .player #nowplay-image[current="rock"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-rock.png'); }
+.index-wrap header .player #nowplay-image[current="pump"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-pump.png'); }
+.index-wrap header .player #nowplay-image[current="yo"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-yo.png'); }
+.index-wrap header .player #nowplay-image[current="techno"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-techno.png'); }
+.index-wrap header .player #nowplay-image[current="mix"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-mix.png'); }
+*/
+.index-wrap header .player #nowplay-image img { width: 55px; height: 55px; }
+.index-wrap header .player .textinfo { width: 264px; text-decoration: none; min-height: 55px;}
+.index-wrap header .player .textinfo #nowplay-station { color: white; margin: 4px 0 0 11px; font-size: 14px; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; }
+.index-wrap header .player .textinfo #nowplay-artist { color: #fff; margin: 2px 0 0 11px; opacity: 0.4; max-width: 330px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.index-wrap header .player .textinfo #nowplay-title { color: #fff; margin: 0 0 0 11px; opacity: 0.6; max-width: 330px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.index-wrap header .player .top-buttons { background-repeat: no-repeat; background-position: 0 center; }
+.index-wrap header .player .top-buttons > div { cursor: pointer; min-width: 43px; height: 55px; }
+.index-wrap header .player .top-buttons > div i,
+.index-wrap header .player .switch-stations > div,
+.index-wrap header .player .play-pause span { opacity: 1; }
+.index-wrap header .player .top-buttons > div:hover i,
+.index-wrap header .player .switch-stations > div:hover,
+.index-wrap header .player .play-pause:hover span { opacity: 1; }
+.index-wrap header .player .top-buttons div.active { background-image: url('img/black40.png'); }
+
+.index-wrap header .player .top-buttons .all-stations-menu { background-image: none; text-align: center; font-size: 21px; text-align: center; line-height: 56px; color: #BEBFC0; padding: 0 5px; }
+.index-wrap header .player .top-buttons .all-stations-menu:hover { color: white !important; }
+.index-wrap header .player .top-buttons .all-stations-menu > span { font-size: 11px; line-height: 56px; text-align: center; text-transform: uppercase; padding: 0 5px; }
+.index-wrap header .player .top-buttons .all-stations-menu > span i { font-size: 10px; margin-left: 5px; }
+.index-wrap header .player .top-buttons .all-stations-menu > span i:before { transform: rotate(90deg); }
+.index-wrap header .player .top-buttons .all-stations-menu:hover > span i:before { transform: rotate(270deg); }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown { display: none; position: absolute; box-shadow: 1px 3px 6px 1px rgba(0,0,0,0.6); background-color: #2a2d2e; color: rgba(255,255,255,0.4); margin-left: -748px; z-index: 100; margin-top: -2px; }
+.index-wrap header .player .top-buttons .all-stations-menu:hover i.icon-station-list { color: #67d0f7; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td { width: 115px; height: 100px; padding-bottom: 15px; vertical-align: bottom; font-size: 13px; border: 1px #9aa1ac solid; text-align: center; white-space: nowrap; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td i { font-size: 61px; display: block; position: relative; height: 80px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td span { color: rgba(255,255,255,0.4); display: block; text-decoration: none; line-height: 23px; /*margin-top: -10px;*/ }
+
+
+/*.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rr { font-size: 72px; margin-top: -25px; margin-bottom: 24px; }*/
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rr { }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td:before { position: absolute; font-family: "record"; font-size: 72px; margin-left: -57px; width: 113px; vertical-align: middle; height: 85px; font-size: 55px; line-height: 94px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td:hover:before { color: #fff; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td span { display: block; width: 112px; margin-top: 83px; text-decoration: none; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td:hover a { color: #fff; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rr:before { content: '\f13a'; font-size: 72px; line-height: 55px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#ps:before {   content: '\f135'; font-size: 57px; line-height: 93px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#sd90:before { content: '\f13c'; font-size: 55px; line-height: 94px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#tm:before { content: '\f13f'; font-size: 54px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#teo:before { content: '\f13e'; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#dc:before { content: '\f125'; font-size: 51px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#techno:before { content: '\f13d'; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#trap:before { content: '\f141'; font-size: 53px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#vip:before { content: '\f142'; font-size: 55px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#club:before { content: '\f124'; font-size: 55px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#deep:before { content: '\f126'; font-size: 55px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#dub:before { content: '\f127'; font-size: 55px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#gop:before { content: '\f12a'; font-size: 55px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mix:before { content: '\f131'; font-size: 40px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rock:before { content: '\f139'; font-size: 45px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#chil:before { content: '\f123'; font-size: 55px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mdl:before { content: '\f12f'; font-size: 41px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#brks:before { content: '\f122'; font-size: 60px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#pump:before { content: '\f136'; font-size: 55px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rus:before { content: '\f13b'; font-size: 55px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#yo:before { content: '\f144'; font-size: 55px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#fut:before { content: '\f129'; font-size: 55px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mini:before { content: '\f130'; font-size: 55px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rave:before { content: '\f138'; font-size: 55px; line-height: 100px; }
+
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown tr:nth-child(1) td { border-top: none; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown tr:nth-child(3) td { border-bottom: none; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown tr td:nth-child(1) { border-left: none; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown tr td:nth-child(7) { border-right: none; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/black40.png'); border: 1px rgba(255,255,255,0.2) solid; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td.active { color: #fff; background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/img/black60.png'); }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rr.active,
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#ps.active,
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#brks.active,
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#tm.active,
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#club.active,
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rock.active,
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#chil.active,
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mdl.active,
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rus.active,
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#yo.active { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/white25.png'); }
+
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td:hover { color: #fff; }
+.index-wrap header .player .top-buttons .open-popup-player { /*border-right: 1px #4D4F50 solid;*/ font-size: 21px; text-align: center; line-height: 56px; color: #BEBFC0; }
+.index-wrap header .player .top-buttons .open-popup-player:hover { color: white !important; }
+.index-wrap header .player .top-buttons .like-top-menu { /*border-right: 1px #4D4F50 solid; border-left: 1px #4D4F50 solid;*/ font-size: 21px; text-align: center; line-height: 55px; color: #BEBFC0; }
+.index-wrap header .player .top-buttons .like-top-menu:hover { color: white !important; }
+
+.index-wrap header .player .top-buttons .top { /*border-right: 1px #4D4F50 solid; border-left: 1px #4D4F50 solid;*/ font-size: 21px; text-align: center; line-height: 55px; width: 80px; color: #BEBFC0; }
+.index-wrap header .player .top-buttons .top:hover { color: white !important; }
+
+.index-wrap header .player .like_in { display: none; box-shadow: 0px 0px 8px -2px #222325; background-repeat: no-repeat; position: absolute; margin-left: 622px; top: 53px; z-index: 200; background-color: #222325; }
+.index-wrap header .player .like_in span { line-height: 30px; margin-left: 7px; font-size: 12px; }
+.index-wrap header .player .like_in i { font-size: 25px; float: left; width: 26px; text-align: center; line-height: 31px; }
+.index-wrap header .player .like_in a { color: #bcc1c2; text-decoration: none; display: block; padding: 5px 23px 5px 14px; }
+.index-wrap header .player .like_in a:hover { color: #FCFFFF; background-color: #262829; }
+.index-wrap header .player .like_in a:first-child { padding-top: 10px; }
+.index-wrap header .player .like_in a:last-child { padding-bottom: 10px; }
+.index-wrap header .player .like_in::before { content: ' '; position: absolute; z-index: 205; left: 77px; top: -16px; border: 8px solid transparent; border-bottom: 8px solid #222325; }
+
+.index-wrap header .player .top-buttons .volume .player-volume-wrapper { display: none; background-color: #2a2d2e; margin-top: -1px; background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/black40.png'); position: relative; z-index: 400; padding-bottom: 20px; }
+.index-wrap header .player .top-buttons .volume:hover .player-volume-wrapper { display: block; }
+.index-wrap header .player .top-buttons .volume #volume-slider { border-radius: 3px; width: 10px; position: relative; height: 130px; background-color: #fff; left: 16px; z-index: 200; }
+.index-wrap header .player #volume-slider { position: absolute; margin-left: 555px; cursor: pointer; width: 65px; height: 3px; background: #121315; margin-top: 25px; border-radius: 5px;}
+.index-wrap header .player #volume-slider .ui-slider-range { height: 3px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; background: #FFAE00;     position: inherit;}
+.index-wrap header .player #volume-slider .ui-slider-range::after {
+    content: '';
+    width: 65px;
+    height: 20px;
+    display: block;
+    margin-top: -8px;
+}
+.index-wrap header .player #volume-slider .ui-slider-handle { position: absolute; border: 1px solid rgb(211, 211, 211); font-weight: normal; color: rgb(85, 85, 85); height: 18px; top: -8px; width: 1px; background-color: rgb(211, 216, 209);}
+.index-wrap header .player .top-buttons .volume .ui-slider-range {background: #FFAE00; position: absolute; border: 0; bottom: 0; width: 100%; border-radius: 3px 3px 3px 3px; }
+.index-wrap header .player .top-buttons .vk_plus { display: block; font-size: 36px; border-right: 1px #4D4F50 solid; text-align: center; line-height: 63px; color: #BEBFC0; }
+.index-wrap header .player .top-buttons .bitrate-changer { display: block; font-size: 24px; text-align: center; line-height: 63px; color: white; }
+.index-wrap header .player .top-buttons .bitrate-changer i.active:before { background-color: rgba(255,255,255,0.4); }
+.index-wrap header .player .top-buttons .switch-stations { display: block; background: none; /*border-right: 1px #4D4F50 solid;*/ min-width: 56px; }
+.index-wrap header .player .top-buttons .switch-stations:hover { background-image: none; }
+.index-wrap header .player .top-buttons .switch-stations > div { cursor: pointer; height: 56px; width: 14px; margin: 0 5px; color: #BEBFC0; line-height: 56px; font-size: 21px;}
+.index-wrap header .player .top-buttons .switch-stations .icon-station-backward:hover { color: #67d0f7; }
+.index-wrap header .player .top-buttons .switch-stations .icon-station-forward:hover { color: #67d0f7; }
+.index-wrap header .player .top-buttons .icon-hq:before { display: block; overflow: hidden; width: 23px; height: 20px; line-height: 21px; margin: 17px auto; border-radius: 3px; }
+
+.index-wrap header .player .logo-rr { z-index: 500; position: relative; width: 200px; height: 55px; background-color: #000; }
+.index-wrap header .player .logo-rr-container { width: 154px; height: 55px; margin: 0 auto; background: url('logo.png') #000 no-repeat center; background-size: contain; }
+
+
+
+.index-wrap header .topblock { background-color: white; z-index: 45; position: relative; height: 46px; }
+.index-wrap header .topblock .news_slider { overflow: hidden; }
+.index-wrap header .topblock nav { width: 760px; margin: 0 auto; }
+.index-wrap .container .main-content  { margin: 0px 0px 30px; padding: 20px 40px 20px 30px; background-color: #fff; overflow: hidden; }
+.index-wrap .container .main-content.fix  { margin-top: 223px; }
+.index-wrap .container .main-content aside { width: 300px; float: right; }
+.index-wrap .container .main-content .left_column { width: 680px; float: left; background-color: transparent; }
+/*Сетка плеера*/
+.left_column .player_grid table.all-stations { table-layout: fixed; 
+    }
+.player_grid table.all-stations td {position: relative; width: 97px; height: 90px; transition: all 0.2s linear; cursor: pointer; 
+    padding: 0 5px 15px 5px; vertical-align: bottom; font-size: 12px; border: 1px #9aa1ac solid; text-align: center; white-space: nowrap; }
+.player_grid table.all-stations td i { font-size: 61px; display: block; position: relative; height: 80px; }
+
+
+.player_grid table.all-stations td a, .player_grid table.all-stations td span{ color: hsla(0, 0%, 40%, 1); display: block; text-decoration: none; }
+.player_grid table.all-stations td:before { color: hsla(0, 0%, 40%, 1); /*position: absolute;*/ font-family: "record"; font-size: 72px;  width: 100px; vertical-align: middle; height: 85px; font-size: 55px; line-height: 94px; text-align: center; text-align: -webkit-center; }
+
+.player_grid table.all-stations td:hover:before { color: hsla(0, 0%, 5%, 1); }
+.player_grid table.all-stations td:hover a { color: hsla(0, 0%, 5%, 1); }
+
+
+.player_grid table.all-stations td.active a { }
+.player_grid table.all-stations td.active:before { }
+.player_grid table.all-stations td.active:hover a { }
+.player_grid table.all-stations td.active:hover:before { }
+
+.player_grid table.all-stations td#rr:before { content: '\f13a'; font-size: 72px; line-height: 40px;  display: block; }
+.player_grid table.all-stations td#ps:before {   content: '\f135'; font-size: 57px; line-height: 93px; }
+.player_grid table.all-stations td#sd90:before { content: '\f13c'; font-size: 55px; line-height: 94px; }
+.player_grid table.all-stations td#tm:before { content: '\f13f'; font-size: 54px; }
+.player_grid table.all-stations td#teo:before { content: '\f13e'; }
+.player_grid table.all-stations td#dc:before { content: '\f125'; font-size: 51px; }
+.player_grid table.all-stations td#techno:before { content: '\f13d'; }
+.player_grid table.all-stations td#trap:before { content: '\f141'; font-size: 53px; }
+.player_grid table.all-stations td#vip:before { content: '\f142'; font-size: 55px; }
+.player_grid table.all-stations td#club:before { content: '\f124'; font-size: 55px; }
+.player_grid table.all-stations td#deep:before { content: '\f126'; font-size: 55px; }
+.player_grid table.all-stations td#dub:before { content: '\f127'; font-size: 55px; }
+.player_grid table.all-stations td#gop:before { content: '\f12a'; font-size: 55px; }
+.player_grid table.all-stations td#mix:before { content: '\f131'; font-size: 40px; }
+.player_grid table.all-stations td#rock:before { content: '\f139'; font-size: 45px; }
+.player_grid table.all-stations td#chil:before { content: '\f123'; font-size: 55px; }
+.player_grid table.all-stations td#mdl:before { content: '\f12f'; font-size: 41px; }
+.player_grid table.all-stations td#brks:before { content: '\f122'; font-size: 60px; }
+.player_grid table.all-stations td#pump:before { content: '\f136'; font-size: 55px; }
+.player_grid table.all-stations td#rus:before { content: '\f13b'; font-size: 55px; }
+.player_grid table.all-stations td#yo:before { content: '\f144'; font-size: 55px; }
+.player_grid table.all-stations td#fut:before { content: '\f129'; font-size: 55px; }
+.player_grid table.all-stations td#mini:before { content: '\f130'; font-size: 55px; }
+.player_grid table.all-stations td#rave:before { content: '\f138'; font-size: 55px; line-height: 100px; }
+                                                                                                      
+
+.player_grid table.all-stations td#more {color: #666;}
+.player_grid table.all-stations td#more div i{
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .2s ease-in-out;
+    }
+    .player_grid table.all-stations td#more div i:first-child{
+    margin-top: -35px;
+    }
+.player_grid table.all-stations td#more:hover div i:first-child, .player_grid table.all-stations td#more.clicked div i:first-child{
+    margin-top: -115px;
+    }
+.player_grid table.all-stations td#more.clicked .downbutton{
+    display: none;
+}
+/*.player_grid table.all-stations td#more:before { content: ''; font-size: 55px;
+    margin-top: -90px;
+}
+.player_grid table.all-stations td#more.active:before { content: '\f15b'; font-size: 55px ;}
+.player_grid table.all-stations td#more.active:hover:before { content: '\f15b'; font-size: 55px; }
+.player_grid table.all-stations td#more:hover:before { content: '\f158'; font-size: 55px;
+    margin-top: -80px; }*/
+/*.player_grid table.all-stations td#more:hover{background: #ebebeb;}*/
+
+.player_grid table.all-stations tr:nth-child(1) td { border-top: none; }
+.player_grid table.all-stations tr:last-child td { border-bottom: none; }
+.player_grid table.all-stations tr td:nth-child(1) { border-left: none; }
+.player_grid table.all-stations tr td:nth-child(7) { border-right: none; }
+.player_grid table.all-stations td { border: 1px #ccc solid; text-align: -webkit-center; text-align: center;}
+.left_column .player_grid table.all-stations td { background-color: hsl(0, 0%, 98%);  }
+.player_grid table.all-stations td:hover { background-color: hsl(0, 0%, 92%) ; }
+.player_grid table.all-stations td.active { background-color: hsla(0, 0%, 80%, 1); }
+
