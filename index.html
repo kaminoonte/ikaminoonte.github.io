@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	<title>Record Online Player</title>
-<link rel="dns-prefetch" href="//github.com/"> 
-<link rel="dns-prefetch" href="//an.yandex.ru/"> 
-<link rel="dns-prefetch" href="//mc.yandex.ru/"> 
-<link rel="dns-prefetch" href="//google-analytics.com/"> 
-<link rel="dns-prefetch" href="//www.google-analytics.com/"> 
-<link rel="dns-prefetch" href="//fonts.googleapis.com/">      
-        
-        
-        
-<link rel="stylesheet" href="style.css" />
-<link href="main.css" type="text/css"  data-template-style="true"  rel="stylesheet" />
-
-    <link rel="stylesheet" href="http://www.radiorecord.ru/i/fonts/record/css/record.css?1" />
-    <script src="http://www.radiorecord.ru/i/js/jquery-2.1.0.min.js"></script>
-    <script src="http://www.radiorecord.ru/i/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
-    <script src="http://www.radiorecord.ru/i/js/jquery.Storage.js"></script>
-    <link rel="stylesheet" href="http://www.radiorecord.ru/i/css/font-awesome/css/font-awesome.min.css" />
-    <script src="http://www.radiorecord.ru/bitrix/templates/flat-new/js/soundmanagerv297a-20150601/script/soundmanager2.js"></script>
-    <script src="http://www.radiorecord.ru/bitrix/templates/flat-new/js/jquery.record.js?"></script>
-            
-	<link rel="image_src" href="http://www.radiorecord.ru/vk_pic.jpg">
+<head>
+<title>Record Online Player</title>
 <meta property="og:url" content="http://lentagram.org" />
 <meta property="og:title" content="Record Online Player" />
 <meta property="og:image" content="http://www.radiorecord.ru/vk_pic.jpg" />
 <meta property="og:image:secure_url" content="http://www.radiorecord.ru/vk_pic.jpg" />
-	</head>
-	<body class=" current-station-background-color">
+        
+<link rel="dns-prefetch" href="//lentagram.org/"> 
+<link rel="dns-prefetch" href="//www.radiorecord.ru/"> 
+<link rel="dns-prefetch" href="//share.pluso.ru/">    
+              
+<link rel="stylesheet" href="style.css" />
+<link href="main.css" type="text/css"  data-template-style="true"  rel="stylesheet" />
+<link rel="stylesheet" href="http://www.radiorecord.ru/i/fonts/record/css/record.css?1" />
+<link rel="stylesheet" href="http://www.radiorecord.ru/i/css/font-awesome/css/font-awesome.min.css" />  
+<link rel="image_src" href="http://www.radiorecord.ru/vk_pic.jpg">        
+<script src="http://www.radiorecord.ru/i/js/jquery-2.1.0.min.js"></script>
+<script src="http://www.radiorecord.ru/i/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+<script src="http://www.radiorecord.ru/i/js/jquery.Storage.js"></script>
+<script src="http://www.radiorecord.ru/bitrix/templates/flat-new/js/soundmanagerv297a-20150601/script/soundmanager2.js"></script>
+<script src="http://www.radiorecord.ru/bitrix/templates/flat-new/js/jquery.record.js?"></script>
+            
+
+</head>
+<body class=" current-station-background-color">
         
 <script>
 	console.log('<?=$_REQUEST['viewer_id'];?>');
@@ -37,7 +33,7 @@
 
 <div class="index-wrap">
 		<header>
-		<div class="player current-station-background-color" style="z-index: 201;">
+		<div class="player current-station-background-color">
 			<div class="wrapper">
 				<a class="logo pull-left">
 					<div class="logo-rr-container"></div>
@@ -463,7 +459,7 @@
 						image = encodeURIComponent(image);
 						if (image === 'undefined') { image = 'http://radiorecord.ru/vk_pic.jpg'; }
 
-						var ttt = "http://vkontakte.ru/share.php?url=http://vk.com/audio?q=";
+						var ttt = "http://vk.com/share.php?url=http://vk.com/audio?q=";
 						var ttt2 = encodeURIComponent(" - ");
 						var ttt3 = encodeURIComponent("Мне нравится ");
 						var ttt4 = encodeURIComponent(" на РАДИО РЕКОРД!");

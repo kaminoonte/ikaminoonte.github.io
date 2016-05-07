@@ -276,14 +276,16 @@ legend{color:#000}
 .index-wrap header .topblock .news_slider { overflow: hidden; }
 .index-wrap header .topblock nav { width: 760px; margin: 0 auto; }
 .index-wrap .container .main-content  { margin: 0px 0px 30px; padding: 20px 40px 20px 30px; background-color: #fff; overflow: hidden; }
-.index-wrap .container .main-content.fix  { margin-top: 223px; }
+.index-wrap .container .main-content.fix  { margin-top: 250px; }
 .index-wrap .container .main-content aside { width: 300px; float: right; }
 .index-wrap .container .main-content .left_column { width: 680px; float: left; background-color: transparent; }
+
 /*Сетка плеера*/
+
 .left_column .player_grid table.all-stations { table-layout: fixed; 
     }
-.player_grid table.all-stations td {position: relative; width: 97px; height: 90px; transition: all 0.2s linear; cursor: pointer; 
-    padding: 0 5px 15px 5px; vertical-align: bottom; font-size: 12px; border: 1px #9aa1ac solid; text-align: center; white-space: nowrap; }
+.player_grid table.all-stations td {position: relative; width: 105px; height: 105px; transition: all 0.2s linear; cursor: pointer; 
+    padding: 0 0px 15px 0px; vertical-align: bottom; font-size: 12px; border: 1px #9aa1ac solid; text-align: center; white-space: nowrap; }
 .player_grid table.all-stations td i { font-size: 61px; display: block; position: relative; height: 80px; }
 
 
