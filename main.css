@@ -268,7 +268,7 @@ legend{color:#000}
 .index-wrap header .player .top-buttons .icon-hq:before { display: block; overflow: hidden; width: 23px; height: 20px; line-height: 21px; margin: 17px auto; border-radius: 3px; }
 
 .index-wrap header .player .logo-rr { z-index: 500; position: relative; width: 200px; height: 55px; background-color: #000; }
-.index-wrap header .player .logo-rr-container { width: 154px; height: 55px; margin: 0 auto; background: url('logo.png') #000 no-repeat center; background-size: contain; }
+.index-wrap header .player .logo-rr-container { width: 156px; height: 55px; margin: 0 auto; background: url('_new_logo.png') #404040 no-repeat center; background-size: contain; }
 
 
 
