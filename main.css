@@ -283,7 +283,7 @@ legend{color:#000}
 
 /*Сетка плеера*/
 
-.left_column .player_grid table.all-stations { table-layout: fixed; 
+.left_column .player_grid table.all-stations { table-layout: fixed; margin: 0 auto;
     }
 .player_grid table.all-stations td {position: relative; width: 105px; height: 105px; transition: all 0.2s linear; cursor: pointer; 
     padding: 0 0px 15px 0px; vertical-align: bottom; font-size: 12px; border: 1px #9aa1ac solid; text-align: center; white-space: nowrap; }
