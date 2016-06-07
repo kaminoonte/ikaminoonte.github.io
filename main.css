@@ -98,7 +98,7 @@ legend{color:#000}
 
 
 
-.index-wrap { margin: 0 auto; padding:0; position: absolute;   overflow: hidden;  }
+.index-wrap { margin: 0 auto; padding:0;   overflow: hidden;  }
 .index-wrap:after { content: " "; display: block; }
 
 
@@ -106,7 +106,7 @@ legend{color:#000}
 .mfp-zoom-out-cur { cursor: default; }
 .mfp-zoom-out-cur .mfp-image-holder .mfp-close { cursor: pointer; }
 
-.index-wrap .container { width: 760px; margin: 0; position: relative;}
+.index-wrap .container { width: 760px; margin: 0 auto; position: relative;}
 .index-wrap .container .logo { position: absolute; margin:  0; }
 .index-wrap .container .logo a { display: block; }
 
