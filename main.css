@@ -1,5 +1,5 @@
-html{width: 0 auto;color:#000;margin: auto;}
-.index-wrap .container {margin: auto;}
+html{width: 0 auto;color:#000;}
+
 body,div,dl,dt,dd,ul,ol,li,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
 table{border-collapse:collapse;border-spacing:0}
 fieldset,img{border:0}
@@ -98,7 +98,7 @@ legend{color:#000}
 
 
 
-.index-wrap { margin:  0; padding:0;   background-position: top left; background-repeat: repeat-x; overflow: hidden;  }
+.index-wrap { margin: 0 auto; padding:0;   background-position: top left; background-repeat: repeat-x; overflow: hidden;  }
 .index-wrap:after { content: " "; display: block; }
 
 
