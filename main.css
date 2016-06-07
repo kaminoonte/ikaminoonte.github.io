@@ -98,7 +98,7 @@ legend{color:#000}
 
 
 
-.index-wrap { margin: 0 auto; padding:0;   background-position: top left; background-repeat: repeat-x; overflow: hidden;  }
+.index-wrap { margin: 0 auto; padding:0; position: absolute;   overflow: hidden;  }
 .index-wrap:after { content: " "; display: block; }
 
 
@@ -111,7 +111,7 @@ legend{color:#000}
 .index-wrap .container .logo a { display: block; }
 
 
-.index-wrap header { margin:  0; padding:0;  width: 758px; z-index: 500; }
+.index-wrap header { margin: 0 auto; padding:0; position: absolute;   width: 758px; z-index: 500; }
 .index-wrap header.fix { z-index: 450;  width: 760px; margin-top: 0; top: 0; }
 .index-wrap header .player { top: 0px; width: 100%; height: 55px; background-color: #2a2d2e; }
 .index-wrap header .player .wrapper { width: 760px; height: 55px; margin: 0 ; position: relative; }
