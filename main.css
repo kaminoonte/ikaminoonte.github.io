@@ -235,7 +235,7 @@ legend{color:#000}
 .index-wrap header .player .top-buttons .top { /*border-right: 1px #4D4F50 solid; border-left: 1px #4D4F50 solid;*/ font-size: 21px; text-align: center; line-height: 55px; width: 80px; color: #BEBFC0; }
 .index-wrap header .player .top-buttons .top:hover { color: white !important; }
 
-.index-wrap header .player .like_in { display: none; box-shadow: 0px 0px 8px -2px #222325; background-repeat: no-repeat; position: absolute; margin-left: 710px; top: 53px; z-index: 200; background-color: #222325; }
+.index-wrap header .player .like_in { display: none; box-shadow: 0px 0px 8px -2px #222325; background-repeat: no-repeat; position: absolute; margin-left: 680px; top: 53px; z-index: 200; background-color: #222325; }
 .index-wrap header .player .like_in span { line-height: 30px; margin-left: 7px; font-size: 12px; }
 .index-wrap header .player .like_in i { font-size: 25px; float: left; width: 27px; text-align: center; line-height: 31px; }
 .index-wrap header .player .like_in a { color: #bcc1c2; text-decoration: none; display: block; padding: 5px 23px 5px 14px; }
