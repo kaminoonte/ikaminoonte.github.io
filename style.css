@@ -17,7 +17,7 @@
 
 		
 	.pole_left {  width: 41px; background-color: rgba(0,0,0,0.5); vertical-align:top; }
-		.pole_left .tab { width: 100%; height: 80px; color: #333; background-image: url('img/tab_icons.png'); cursor: pointer; }
+		.pole_left .tab { width: 100%; height: 81px; color: #333; background-image: url('img/tab_icons.png'); cursor: pointer; }
 			.pole_left .tab.active { background-color: #181d2a; }
 			.pole_left .tab.radio { }
 			.pole_left .tab.tickets { background-position: 0px -81px; }
