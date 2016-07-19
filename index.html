@@ -335,27 +335,7 @@ type="image/x-icon"/>
 					start_updater(1000);
 					update_views();
 
-					$(function() {
-						var slider = $('#volume-slider');
-						slider.slider({
-							range: "min",
-							min: 1,
-							max: 100,
-							value: getVolume(),
-							orientation: 'horizontal',
-							start: function(event,ui) {},
-							slide: function(event, ui) {
-								var value = slider.slider('value');
-								setVolume(value);
-							},
-							change: function(event, ui) {
-								var value = slider.slider('value');
-								setVolume(value);
-							},
-							stop: function(event,ui) {
-								//tooltip.fadeOut('fast');
-							},
-						});
+					
 
 						$('.tooltip').tooltipster({
 							animation: 'fade',
@@ -429,12 +409,7 @@ type="image/x-icon"/>
 						});
 					}
 
-					$(document).on('click', '.all-stations-menu', function(e) {
-						e.stopPropagation();
-						$(this).children('.all-stations-dropdown').toggle();
-						$(this).toggleClass('active');
-						hideLike();
-					});
+				
 
 					$(document).on('click', '.like-top-menu', function(e) {
 						e.stopPropagation();
