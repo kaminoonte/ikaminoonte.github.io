@@ -20,7 +20,6 @@ type="image/x-icon"/>
 <meta property="og:image:secure_url" content="G1DEuH0k.jpg" />
         
 <link rel="dns-prefetch" href="//rr.uarticle.ru/"> 
-<link rel="dns-prefetch" href="//vk.com/">  
 <link rel="dns-prefetch" href="//www.radiorecord.ru/"> 
 <link rel="dns-prefetch" href="//share.pluso.ru/">    
 <link rel="dns-prefetch" href="//mc.yandex.ru/">               
@@ -92,9 +91,12 @@ type="image/x-icon"/>
 				
 					<div class="all-stations-menu"><div class="all-stations-dropdown"><table><tr><td id="rr"></td><td id="mix"></td><td id="deep"></td><td id="club"></td><td id="fut"></td><td id="tm"></td><td id="chil"></td><td id="mini"></td><td id="ps"></td><td id="rus"></td><td id="vip"></td><td id="sd90"></td><td id="brks"></td><td id="dub"></td><td id="dc"></td><td id="techno"></td><td id="teo"></td><td id="trap"></td><td id="pump"></td><td id="rock"></td><td id="mdl"></td><td id="gop"></td><td id="yo"></td><td id="rave"></td></tr></table></div></div>
 				</div>
-				<script>
+			<script>
 
-					$(function(){footer_fix();});
+					$(function(){
+
+						footer_fix();
+					});
 		
 					$(function(){if (isMobile(/iPhone|iPad|iPod/i)) $('#volume-slider').css('display','none'); });
 
@@ -110,6 +112,23 @@ type="image/x-icon"/>
 							$(this).addClass('selected');							
 							return false;
 							}
+						});
+
+/*						$('section#page-news-template .news-body main img,.news-popup .news-body img').each(function(){ 
+							if ($(this).parent('a').length == 0) $(this).wrap('<a class="big-image" href="' + $(this).attr('src') + '" />'); 
+						});
+*/
+
+						$('.big-image,.big_image').magnificPopup({
+						type: 'image',
+						callbacks: {
+						open: function() { 
+							//$('.mfp-img').attr('style',''); 
+						},
+				  		resize: function() { 
+							//$('.mfp-img').attr('style',''); 
+						}	
+						}
 						});
 
 						//console.log('fchanged3');						
@@ -244,26 +263,52 @@ type="image/x-icon"/>
 
 							var $pl_link = stations[prefixes[current_station]]['link'];
 							var $rnumber = 1 + Math.floor(Math.random() * 9999999);
-							$pl_link = $pl_link + '?' + $rnumber;
+							//$pl_link = $pl_link + '?' + $rnumber;
 							//var $jjson = $.getJSON($pl_link);							
 
 							//console.log($pl_link + '?' + $rnumber);
 								
-							console.log($pl_link);
+							//console.log($pl_link);
 
 							$.getJSON($pl_link, function(data) {								
 								var items = [];
                                                                   var $ddata = JSON.parse('"' + data + '"');
-									console.log($ddata);
+
+									//console.log($ddata);
 								//if($ddata.length == 15 && $ddata) {
-								if($ddata) {										 					
+								if($ddata) {
+									
+								/*
+								$.getJSON('https://itunes.apple.com/search?at=11lM73&country=ru&limit=1&media=music&explicit=No&term=' 							
+								+ encodeURI(data.artist + ' - '+ data.title) + '&callback=?', function($itunes) {
+
+								if ($itunes.length !== 0) {
+
+								var $itunes_res = $itunes.results[0];
+
+								if ($itunes_res) {
+									data['image100'] = $itunes_res.artworkUrl100;
+									data['image600'] = $itunes_res.artworkUrl600;
+								} else {
+									data.image100 = '';
+									data.image600 = '';
+								}																
+								}
+
+								*/
+								        if (!data['image100'] || !data['image600']) {
+									  data['image100'] = null;
+									  data['image600'] = null;
+									}
+									
+
+
 								$.each(data, function(key, val) {
-								//console.log(key);				
 									
 									if (key == 'artist' || key == 'ARTIST' && $('#nowplay-artist').html() != val) {										
 
-										console.log($('.textinfo #nowplay-artist').html());
-										console.log('newSonger: ' + val);
+										//console.log($('.textinfo #nowplay-artist').html());
+										//console.log('newSonger: ' + val);
 										artist = val;
 										if (prefixes[current_station]=="mix") {
 											val = "By "+ val;
@@ -278,8 +323,8 @@ type="image/x-icon"/>
 										track = val;
 										$('#nowplay-title').html(val);
 									}
-									if (key == 'image100' || key == 'image') {
-										if (val == null) { $('#nowplay-image').html('<i style="width: 100px; color: '+stations[prefixes[current_station]]['fcolor']+';" class="icon-st-'+prefixes[current_station]+'"></i>').css('background-image', 'url(/bitrix/templates/flat-new/img/black40.png)').removeClass('valid'); }
+									if (key == 'image100' || key == 'image') {										
+										if (val == null || val == '') { $('#nowplay-image').html('<i style="width: 100px; color: '+stations[prefixes[current_station]]['fcolor']+';" class="icon-st-'+prefixes[current_station]+'"></i>').css('background-image', 'url(/bitrix/templates/flat-new/img/black40.png)').removeClass('valid'); }
 										else { if ($('#nowplay-image img').attr('src') != val) { $('#nowplay-image').html('<img src="'+val+'" />').addClass('valid'); } }
 									}
 									if (key == 'image600') {
@@ -304,7 +349,7 @@ type="image/x-icon"/>
 										}
 									}
 
-								}); start_updater(5000); } 
+								}); /* }); */ start_updater(5000); }  
 								
 							}).fail(function(jqxhr, textStatus, error){
 								console.log('fail getJson'); 
@@ -328,14 +373,34 @@ type="image/x-icon"/>
 	
 						if(window.updaterIntervalID) clearInterval(window.updaterIntervalID);
 						if (!$time) var $time = 8000;
-						console.log($time);
+						//console.log($time);
 						window.updaterIntervalID = setInterval("update_track_inline();",$time);
 					}
 
 					start_updater(1000);
 					update_views();
 
-					
+					$(function() {
+						var slider = $('#volume-slider');
+						slider.slider({
+							range: "min",
+							min: 1,
+							max: 100,
+							value: getVolume(),
+							orientation: 'horizontal',
+							start: function(event,ui) {},
+							slide: function(event, ui) {
+								var value = slider.slider('value');
+								setVolume(value);
+							},
+							change: function(event, ui) {
+								var value = slider.slider('value');
+								setVolume(value);
+							},
+							stop: function(event,ui) {
+								//tooltip.fadeOut('fast');
+							},
+						});
 
 						$('.tooltip').tooltipster({
 							animation: 'fade',
@@ -409,7 +474,12 @@ type="image/x-icon"/>
 						});
 					}
 
-				
+					$(document).on('click', '.all-stations-menu', function(e) {
+						e.stopPropagation();
+						$(this).children('.all-stations-dropdown').toggle();
+						$(this).toggleClass('active');
+						hideLike();
+					});
 
 					$(document).on('click', '.like-top-menu', function(e) {
 						e.stopPropagation();
@@ -447,7 +517,7 @@ type="image/x-icon"/>
 						image = encodeURIComponent(image);
 						if (image === 'undefined') { image = 'http://radiorecord.ru/vk_pic.jpg'; }
 
-						var ttt = "http://vk.com/share.php?url=http://vk.com/audio?q=";
+						var ttt = "http://vkontakte.ru/share.php?url=http://vk.com/audio?q=";
 						var ttt2 = encodeURIComponent(" - ");
 						var ttt3 = encodeURIComponent("Мне нравится ");
 						var ttt4 = encodeURIComponent(" на РАДИО РЕКОРД!");
