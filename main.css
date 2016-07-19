@@ -168,11 +168,10 @@ legend{color:#000}
 .index-wrap header .player .top-buttons .all-stations-menu > span i { font-size: 10px; margin-left: 5px; }
 .index-wrap header .player .top-buttons .all-stations-menu > span i:before { transform: rotate(90deg); }
 .index-wrap header .player .top-buttons .all-stations-menu:hover > span i:before { transform: rotate(270deg); }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown { display: none; position: absolute; box-shadow: 1px 3px 6px 1px rgba(0,0,0,0.6); background-color: #2a2d2e; color: rgba(255,255,255,0.4); margin-left: -748px; z-index: 100; margin-top: -2px; }
-.index-wrap header .player .top-buttons .all-stations-menu:hover i.icon-station-list { color: #67d0f7; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td { width: 115px; height: 100px; padding-bottom: 15px; vertical-align: bottom; font-size: 13px; border: 1px #9aa1ac solid; text-align: center; white-space: nowrap; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td i { font-size: 61px; display: block; position: relative; height: 80px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td span { color: rgba(255,255,255,0.4); display: block; text-decoration: none; line-height: 23px; /*margin-top: -10px;*/ }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown { display: none; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td { display: none;  }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td i { display: none;  }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td span { display: none;  }
 
 
 /*.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rr { font-size: 72px; margin-top: -25px; margin-bottom: 24px; }*/
