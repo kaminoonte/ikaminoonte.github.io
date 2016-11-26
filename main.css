@@ -360,3 +360,7 @@ legend{color:#000}
 .player_grid table.all-stations td:hover { background-color: hsl(0, 0%, 92%) ; }
 .player_grid table.all-stations td.active { background-color: hsla(0, 0%, 80%, 1); }
 
+/* Сетка ads */
+
+.player_grid table.all-stations_ads td {position: relative; width: 105px; height: 105px; transition: all 0.2s linear; cursor: pointer; 
+    padding: 0 0px 1px 0px; vertical-align: bottom; font-size: 12px; border: 1px #9aa1ac solid; text-align: center; white-space: nowrap; }
