@@ -362,5 +362,5 @@ legend{color:#000}
 
 /* Сетка ads */
 
-.player_grid table.all-stations_ads td {background-color: rgba(0,0,0,0.5);position: relative; width: 105px; height: 105px; transition: all 0.2s linear; cursor: pointer; 
-    padding: 0 0px 1px 0px; vertical-align: bottom; font-size: 12px; border: 0px; text-align: center; white-space: nowrap; }
+.player_grid table.all-stations_ads td {background-color: black;position: relative; width: 105px; height: 105px; transition: all 0.2s linear; cursor: pointer; 
+    padding: 0 0px 0px 0px; vertical-align: bottom; font-size: 12px; border: 0px; text-align: center; white-space: nowrap; }
