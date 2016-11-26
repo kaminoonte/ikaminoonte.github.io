@@ -6,11 +6,11 @@
 .pole_top .controll { float: left; margin: 12px; cursor: pointer; }
 .pole_top .controll.play { background-image: url('img/play.png'); background-repeat: no-repeat; width: 33px; height: 33px; }
 .pole_top .controll.playing { background-image: url('pause.png'); background-position: 0 1px; }
-.pole_top .nowtrack { height: 30px; padding: 14px 0; font-size: 12px; font-weight: bold; float: left; width: 237px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pole_top .nowtrack { height: 30px; padding: 14px 0; font-size: 12px; font-weight: bold; float: left; width: 240px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .pole_top .nowtrack .artist { color: white; overflow: hidden; text-overflow: ellipsis; }
 .pole_top .nowtrack .name { color: #638bbd; font-size: 11px; overflow: hidden; text-overflow: ellipsis; }
 			
-.pole_top .radio-pages { float: left; width: 115px; height: 58px; overflow: hidden; border-right: 1px #1b3143 solid; }
+.pole_top .radio-pages { float: left; width: 120px; height: 58px; overflow: hidden; border-right: 1px #1b3143 solid; }
 		
 		
 		
