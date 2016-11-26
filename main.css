@@ -111,7 +111,7 @@ legend{color:#000}
 
 
 .index-wrap header { margin: 0 auto; padding:0; width: 800px; z-index: 500; }
-.index-wrap header.fix { z-index: 450;  width: 800px; margin-top: 0; top: 0; }
+.index-wrap header.fix { z-index: 450;  width: 840px; margin-top: 0; top: 0; }
 .index-wrap header .player { top: 0px; width: 100%; height: 55px; background-color: #2a2d2e; }
 .index-wrap header .player .wrapper { width: 800px; height: 55px; margin: 0 ; position: relative; }
 .index-wrap header .player .wrapper_3px { position: relative; width: 800px; height: 3px; margin: 0 auto; overflow: hidden; background-image: url('http://www.radiorecord.ru/bitrix/templates/flat/img/3px.png'); margin-top: -3px; background-repeat: repeat; }
