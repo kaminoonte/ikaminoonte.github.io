@@ -41,17 +41,17 @@
 .pole_content .station .station-prod { color: #bec0c5; font-size: 9px; }
 .pole_content .station .station-text { height: 67px; display: table-cell; vertical-align: middle; }
 		
-.pole_content .radio { overflow: hidden; float: left; width: 800px; }
-.pole_content .tickets { overflow: hidden; float: left; width: 800px; display: none; }
-.pole_content .rshop { overflow: hidden; float: left; width: 800px; display: none; }
-.pole_content .playlists { overflow: hidden; float: left; width: 800px; display: none; }
-.pole_content .playlist-detail { overflow: hidden; float: left; width: 800px; display: none; min-height: 496px; }
-.pole_content .history { overflow: hidden; overflow-y: auto; float: left; width: 800px; display: none; max-height: 3700px; }
+.pole_content .radio { overflow: hidden; float: left; width: 900px; }
+.pole_content .tickets { overflow: hidden; float: left; width: 900px; display: none; }
+.pole_content .rshop { overflow: hidden; float: left; width: 900px; display: none; }
+.pole_content .playlists { overflow: hidden; float: left; width: 900px; display: none; }
+.pole_content .playlist-detail { overflow: hidden; float: left; width: 900px; display: none; min-height: 496px; }
+.pole_content .history { overflow: hidden; overflow-y: auto; float: left; width: 900px; display: none; max-height: 3700px; }
 .pole_content .history a { color: #434343; display: block; background-image: url('http://i.radiorecord.ru/img/rr/top100/play.png'); background-repeat: no-repeat; height: 35px; line-height: 35px; text-decoration: none; padding-left: 33px; background-position: 6px center; }
 .pole_content .history a:nth-child(odd) { background-color: #e2edf3; }
 .pole_content .history a:nth-child(even) { background-color: #ffffff; }
 .pole_content .history a.playing { background-color: rgb(39, 174, 212); background-image: url('http://i.radiorecord.ru/img/rr/top100/pause.png'); }
-.pole_content .top100 { overflow: hidden; overflow-y: auto; float: left; width: 712px; display: none; max-height: 3700px; }
+.pole_content .top100 { overflow: hidden; overflow-y: auto; float: left; width: 900px; display: none; max-height: 3700px; }
 .pole_content .top100 a { color: #434343; display: block; background-image: url('http://i.radiorecord.ru/img/rr/top100/play.png'); background-repeat: no-repeat; height: 35px; line-height: 35px; text-decoration: none; padding-left: 33px; background-position: 6px center; }
 .pole_content .top100 a:nth-child(odd) { background-color: #e2edf3; }
 .pole_content .top100 a:nth-child(even) { background-color: #ffffff; }
