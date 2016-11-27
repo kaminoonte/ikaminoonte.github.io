@@ -105,7 +105,7 @@ legend{color:#000}
 .mfp-zoom-out-cur { cursor: default; }
 .mfp-zoom-out-cur .mfp-image-holder .mfp-close { cursor: pointer; }
 
-.index-wrap .container { width: 848px; margin: 0 auto; position: relative;}
+.index-wrap .container { width: 840px; margin: 0 auto; position: relative;}
 .index-wrap .container .logo { position: absolute; margin:  0; }
 .index-wrap .container .logo a { display: block; }
 
