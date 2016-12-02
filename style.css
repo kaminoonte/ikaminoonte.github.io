@@ -28,13 +28,12 @@
 .wrapper { background-color: rgba(0,0,0,0.5);
     left: 0;
     top: 0;
-    width: 100%;height: 56px;
-	padding-left:10px; padding-right:10px; 
-}
-		
-.wrapper { width: 850px; font-family: Arial; font-size: 12px; margin: 0 auto;}
+    width: 100%;height: 55px;
+	
+}		
+.wrapper { width: 848px; font-family: Arial; font-size: 12px; margin: 0 auto;}
 .pole_top { width: 100%; height: 55px;   overflow: hidden; }
-.pole_top .logo { padding: 0px 0 10px 0; float: left; border-right: 0px  solid; overflow: hidden; cursor: pointer; }
+.pole_top .logo { padding: 0px 0 0px 0; float: left; border-right: 0; overflow: hidden; cursor: pointer; }
 .pole_top .controll { float: left; margin: 12px; cursor: pointer; }
 .pole_top .controll.play { background-image: url('img/play.png'); background-repeat: no-repeat; width: 33px; height: 33px; }
 .pole_top .controll.playing { background-image: url('pause.png'); background-position: 0 1px; }
