@@ -29,6 +29,7 @@
     left: 0;
     top: 0;
     width: 100%;height: 56px;
+	padding-left:10px; padding-right:10px; 
 }
 		
 .wrapper { width: 846px; font-family: Arial; font-size: 12px; margin: 0 auto;}
