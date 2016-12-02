@@ -23,13 +23,10 @@
   margin: 0;
   padding: 0;
 }
-html,
-body {
-  height: 100%;
-}
+
 
 .footer {color: #fff; 
-  flex: 0 0 auto; margin: 0 0 auto;
+  flex: 0 0 auto; 
 }
 		
 .wrapper { width: 846px; font-family: Arial; font-size: 12px; margin: 0 auto;}
