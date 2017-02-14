@@ -101,32 +101,7 @@ legend{color:#000}
 .index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rr { }
 .index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td:before { position: absolute; font-family: "record"; font-size: 72px; margin-left: -57px; width: 113px; vertical-align: middle; height: 85px; font-size: 55px; line-height: 94px; }
 .index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td:hover:before { color: #fff; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td span { display: block; width: 112px; margin-top: 83px; text-decoration: none; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td:hover a { color: #fff; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rr:before { content: '\f13a'; font-size: 72px; line-height: 55px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#ps:before {   content: '\f135'; font-size: 57px; line-height: 93px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#sd90:before { content: '\f13c'; font-size: 55px; line-height: 94px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#tm:before { content: '\f13f'; font-size: 54px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#teo:before { content: '\f13e'; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#dc:before { content: '\f125'; font-size: 51px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#techno:before { content: '\f13d'; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#trap:before { content: '\f141'; font-size: 53px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#vip:before { content: '\f142'; font-size: 55px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#club:before { content: '\f124'; font-size: 55px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#deep:before { content: '\f126'; font-size: 55px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#dub:before { content: '\f127'; font-size: 55px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#gop:before { content: '\f12a'; font-size: 55px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mix:before { content: '\f131'; font-size: 40px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rock:before { content: '\f139'; font-size: 45px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#chil:before { content: '\f123'; font-size: 55px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mdl:before { content: '\f12f'; font-size: 41px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#brks:before { content: '\f122'; font-size: 60px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#pump:before { content: '\f136'; font-size: 55px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rus:before { content: '\f13b'; font-size: 55px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#yo:before { content: '\f144'; font-size: 55px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#fut:before { content: '\f129'; font-size: 55px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mini:before { content: '\f130'; font-size: 55px; }
-.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rave:before { content: '\f138'; font-size: 55px; line-height: 100px; }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td span{display:block;width:112px;margin-top:83px;text-decoration:none;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td:hover a{color:#fff;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rr:before{content:'\f105';font-size:72px;line-height:55px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#ps:before{content:'\f10f';font-size:57px;line-height:93px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#sd90:before{content:'\f112';font-size:55px;line-height:94px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#tm:before{content:'\f115';font-size:54px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#teo:before{content:'\f114';}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#dc:before{content:'\f109';font-size:51px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#techno:before{content:'\f113';}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#trap:before{content:'\f116';font-size:53px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#vip:before{content:'\f117';font-size:55px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#club:before{content:'\f108';font-size:55px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#deep:before{content:'\f10a';font-size:55px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#dub:before{content:'\f10b';font-size:55px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#gop:before{content:'\f10c';font-size:55px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mix:before{content:'\f10e';font-size:40px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rock:before{content:'\f119';font-size:45px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#chil:before{content:'\f107';font-size:55px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mdl:before{content:'\f10d';font-size:41px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#brks:before{content:'\f106';font-size:60px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#pump:before{content:'\f121';font-size:55px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rus:before{content:'\f111';font-size:55px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#yo:before{content:'\f118';font-size:55px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#fut:before{content:'\f15e';font-size:55px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mini:before{content:'\f15f';font-size:55px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#goa:before{content:'\f161';font-size:55px;}.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rave:before{content:'\f162';font-size:55px;line-height:100px;}
 
 
 .index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown tr:nth-child(1) td { border-top: none; }
@@ -144,6 +119,7 @@ legend{color:#000}
 .index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#chil.active,
 .index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mdl.active,
 .index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rus.active,
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#goa.active,
 .index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#yo.active { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/white25.png'); }
 
 
@@ -223,31 +199,32 @@ legend{color:#000}
 .player_grid table.all-stations td.active:hover a { }
 .player_grid table.all-stations td.active:hover:before { }
 
-.player_grid table.all-stations td#rr:before { content: '\f13a'; font-size: 72px; line-height: 40px;  display: block; }
-.player_grid table.all-stations td#ps:before {   content: '\f135'; font-size: 57px; line-height: 93px; }
-.player_grid table.all-stations td#sd90:before { content: '\f13c'; font-size: 55px; line-height: 94px; }
-.player_grid table.all-stations td#tm:before { content: '\f13f'; font-size: 54px; }
-.player_grid table.all-stations td#teo:before { content: '\f13e'; }
-.player_grid table.all-stations td#dc:before { content: '\f125'; font-size: 51px; }
-.player_grid table.all-stations td#techno:before { content: '\f13d'; }
-.player_grid table.all-stations td#trap:before { content: '\f141'; font-size: 53px; }
-.player_grid table.all-stations td#vip:before { content: '\f142'; font-size: 55px; }
-.player_grid table.all-stations td#club:before { content: '\f124'; font-size: 55px; }
-.player_grid table.all-stations td#deep:before { content: '\f126'; font-size: 55px; }
-.player_grid table.all-stations td#dub:before { content: '\f10b'; font-size: 55px; }
-.player_grid table.all-stations td#gop:before { content: '\f12a'; font-size: 55px; }
-.player_grid table.all-stations td#mix:before { content: '\f131'; font-size: 40px; }
-.player_grid table.all-stations td#rock:before { content: '\f119'; font-size: 45px; }
-.player_grid table.all-stations td#chil:before { content: '\f123'; font-size: 55px; }
-.player_grid table.all-stations td#mdl:before { content: '\f12f'; font-size: 41px; }
-.player_grid table.all-stations td#brks:before { content: '\f106'; font-size: 60px; }
-.player_grid table.all-stations td#pump:before { content: '\f136'; font-size: 55px; }
-.player_grid table.all-stations td#rus:before { content: '\f13b'; font-size: 55px; }
-.player_grid table.all-stations td#yo:before { content: '\f118'; font-size: 55px; }
-.player_grid table.all-stations td#fut:before { content: '\f129'; font-size: 55px; }
-.player_grid table.all-stations td#mini:before { content: '\f130'; font-size: 55px; }
-.player_grid table.all-stations td#goa:before { content: '\f161'; font-size: 55px; }
-.player_grid table.all-stations td#rave:before { content: '\f138'; font-size: 55px; line-height: 100px; }
+.player_grid table.all-stations td#rr:before{content:'\f105';font-size:72px;line-height:40px;display:block;}.player_grid table
+.all-stations td#ps:before{content:'\f10f';font-size:57px;line-height:93px;}
+.player_grid table.all-stations td#sd90:before{content:'\f112';font-size:55px;line-height:94px;}
+.player_grid table.all-stations td#tm:before{content:'\f115';font-size:54px;}
+.player_grid table.all-stations td#teo:before{content:'\f114';}
+.player_grid table.all-stations td#dc:before{content:'\f109';font-size:51px;}
+.player_grid table.all-stations td#techno:before{content:'\f113';}
+.player_grid table.all-stations td#trap:before{content:'\f116';font-size:53px;}
+.player_grid table.all-stations td#vip:before{content:'\f117';font-size:55px;}
+.player_grid table.all-stations td#club:before{content:'\f108';font-size:55px;}
+.player_grid table.all-stations td#deep:before{content:'\f10a';font-size:55px;}
+.player_grid table.all-stations td#dub:before{content:'\f10b';font-size:55px;}
+.player_grid table.all-stations td#gop:before{content:'\f10c';font-size:55px;}
+.player_grid table.all-stations td#mix:before{content:'\f10e';font-size:40px;}
+.player_grid table.all-stations td#rock:before{content:'\f119';font-size:45px;}
+.player_grid table.all-stations td#chil:before{content:'\f107';font-size:55px;}
+.player_grid table.all-stations td#mdl:before{content:'\f10d';font-size:41px;}
+.player_grid table.all-stations td#brks:before{content:'\f106';font-size:60px;}
+.player_grid table.all-stations td#pump:before{content:'\f121';font-size:55px;}
+.player_grid table.all-stations td#rus:before{content:'\f111';font-size:55px;}
+.player_grid table.all-stations td#yo:before{content:'\f118';font-size:55px;}
+.player_grid table.all-stations td#fut:before{content:'\f15e';font-size:55px;}
+.player_grid table.all-stations td#mini:before{content:'\f15f';font-size:55px;}
+.player_grid table.all-stations td#goa:before{content:'\f161';font-size:55px;}
+.player_grid table.all-stations td#rave:before{content:'\f162';font-size:55px;line-height:100px;}
+.player_grid table.all-stations td#more{color:#666;}
                                                                                                       
 
 .player_grid table.all-stations td#more {color: #666;}
