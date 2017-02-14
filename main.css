@@ -234,18 +234,19 @@ legend{color:#000}
 .player_grid table.all-stations td#vip:before { content: '\f142'; font-size: 55px; }
 .player_grid table.all-stations td#club:before { content: '\f124'; font-size: 55px; }
 .player_grid table.all-stations td#deep:before { content: '\f126'; font-size: 55px; }
-.player_grid table.all-stations td#dub:before { content: '\f127'; font-size: 55px; }
+.player_grid table.all-stations td#dub:before { content: '\f10b'; font-size: 55px; }
 .player_grid table.all-stations td#gop:before { content: '\f12a'; font-size: 55px; }
 .player_grid table.all-stations td#mix:before { content: '\f131'; font-size: 40px; }
-.player_grid table.all-stations td#rock:before { content: '\f139'; font-size: 45px; }
+.player_grid table.all-stations td#rock:before { content: '\f119'; font-size: 45px; }
 .player_grid table.all-stations td#chil:before { content: '\f123'; font-size: 55px; }
 .player_grid table.all-stations td#mdl:before { content: '\f12f'; font-size: 41px; }
-.player_grid table.all-stations td#brks:before { content: '\f122'; font-size: 60px; }
+.player_grid table.all-stations td#brks:before { content: '\f106'; font-size: 60px; }
 .player_grid table.all-stations td#pump:before { content: '\f136'; font-size: 55px; }
 .player_grid table.all-stations td#rus:before { content: '\f13b'; font-size: 55px; }
-.player_grid table.all-stations td#yo:before { content: '\f144'; font-size: 55px; }
+.player_grid table.all-stations td#yo:before { content: '\f118'; font-size: 55px; }
 .player_grid table.all-stations td#fut:before { content: '\f129'; font-size: 55px; }
 .player_grid table.all-stations td#mini:before { content: '\f130'; font-size: 55px; }
+.player_grid table.all-stations td#goa:before { content: '\f161'; font-size: 55px; }
 .player_grid table.all-stations td#rave:before { content: '\f138'; font-size: 55px; line-height: 100px; }
                                                                                                       
 
