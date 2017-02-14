@@ -39,29 +39,7 @@ legend{color:#000}@font-face{font-family:'pf_dintext_pro';src:url(http://www.rad
 .index-wrap header .player a.into_station { display: block; }
 
 
-/*
-.index-wrap header .player #nowplay-image[current="rr"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-rr.png'); }
-.index-wrap header .player #nowplay-image[current="sd90"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-sd90.png'); }
-.index-wrap header .player #nowplay-image[current="tm"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-tm.png'); }
-.index-wrap header .player #nowplay-image[current="rus"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-rus.png'); }
-.index-wrap header .player #nowplay-image[current="mdl"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-mdl.png'); }
-.index-wrap header .player #nowplay-image[current="chil"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-chil.png'); }
-.index-wrap header .player #nowplay-image[current="club"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-club.png'); }
-.index-wrap header .player #nowplay-image[current="gop"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-gop.png'); }
-.index-wrap header .player #nowplay-image[current="vip"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-vip.png'); }
-.index-wrap header .player #nowplay-image[current="ps"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-ps.png'); }
-.index-wrap header .player #nowplay-image[current="deep"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-deep.png'); }
-.index-wrap header .player #nowplay-image[current="brks"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-brks.png'); }
-.index-wrap header .player #nowplay-image[current="dc"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-dc.png'); }
-.index-wrap header .player #nowplay-image[current="dub"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-dub.png'); }
-.index-wrap header .player #nowplay-image[current="trap"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-trap.png'); }
-.index-wrap header .player #nowplay-image[current="teo"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-teo.png'); }
-.index-wrap header .player #nowplay-image[current="rock"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-rock.png'); }
-.index-wrap header .player #nowplay-image[current="pump"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-pump.png'); }
-.index-wrap header .player #nowplay-image[current="yo"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-yo.png'); }
-.index-wrap header .player #nowplay-image[current="techno"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-techno.png'); }
-.index-wrap header .player #nowplay-image[current="mix"] { background-image: url('http://www.radiorecord.ru/bitrix/templates/flat-new/img/stations-icons/icon-mix.png'); }
-*/
+
 .index-wrap header .player #nowplay-image img { width: 55px; height: 55px; }
 .index-wrap header .player .textinfo { width: 265px; text-decoration: none; min-height: 55px;}
 .index-wrap header .player .textinfo #nowplay-station { color: white; margin: 4px 0 0 11px; font-size: 14px; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; }
