@@ -241,6 +241,30 @@ type="image/x-icon"/>
 						
 					});
 
+
+
+					$(document).on("click", ".shop-more", function(e){
+						e.preventDefault();
+
+						$.ajax({
+						  url: $(this).attr("href")
+						}).done(function(data) {
+							var nav = $(data).find(".navigation");
+
+							if(nav.length>0){ $(".navigation").replaceWith(nav);}
+							else {$(".navigation").remove();}
+
+						  var cont = $(data).find(".shop-items").find(".col.elem");
+						  cont.each(function(index){
+
+						  	$(".col.elem").last().after(this)
+					  //console.log( index + ": " + $( this ).text() );
+
+
+						  })
+						});
+					})
+
 					function update_views() {
 
 						$("#station-page-detail .heading .tab-buttons .tab.active").css("border", "2px "+ stations[prefixes[current_station]]["fcolor"] +"solid")
@@ -440,7 +464,8 @@ type="image/x-icon"/>
 							delay: 0,
 							theme: 'tooltipster-light',
 							touchDevices: false,
-							trigger: 'hover'
+							trigger: 'hover',
+							contentAsHTML: true
 						});
 
 						init_chartfresh();
@@ -614,7 +639,6 @@ type="image/x-icon"/>
 						$(this).closest("table").find(".more_station").addClass("hidden");
 						$(this).removeClass("clicked");
 					})
-
 
 				</script>
 			</div>
