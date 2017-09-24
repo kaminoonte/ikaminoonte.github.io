@@ -11,7 +11,7 @@
 <meta name="yandex-verification" content="1ed328a3fa1309aa" />
 <meta name="google-site-verification" content="ug-b2sPrQImezi9Gt4guAq8AvBe5v1OUaJTv2paUMWM">
 <link rel="image_src" href="http://www.radiorecord.ru/logo300-300.jpg">
-<meta property="og:url" content="http://radio.telepubl.ru">
+<meta property="og:url" content="http://radio.telepubl.ru/">
 <meta property="og:title" content="Player Radio Record">
 <meta property="og:image" content="http://www.radiorecord.ru/logo300-300.jpg">
 <meta property="og:image:secure_url" content="https://www.radiorecord.ru/logo300-300.jpg">
@@ -265,7 +265,7 @@ html, body {
 
 					$(document).on('click', '.open-popup-player', function() {
 						stop_play();
-						playerWin = window.open('/player-mini/?st='+prefixes[current_station], 'Player', 'width=240,height=300,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no');
+						playerWin = window.open('/?st='+prefixes[current_station], 'Player', 'width=240,height=300,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no');
 						playerWin.focus();
 						return false;
 					});
@@ -329,8 +329,8 @@ html, body {
 						$('#nowplay-artist').html('');
 						$('#nowplay-title').html('');
 						$('.nowplay-big-image').html('<img src="//www.radiorecord.ru/bitrix/templates/flat-new/img/transparent.png" />').removeClass('valid');
-						$('.fake-heading').css('background-image', 'url("/bitrix/templates/flat-new/img/back_cover.jpg")');
-						$(".into_station").attr("href", "/radio/stations/?st="+prefixes[current_station]);
+						$('.fake-heading').css('background-image', 'url("//www.radiorecord.ru/bitrix/templates/flat-new/img/back_cover.jpg")');
+						$(".into_station").attr("href", "/?st="+prefixes[current_station]);
 						$('#nowplay-image').attr('current', prefixes[current_station]);
 						$('.current-station-background-color').css('background-color', stations[prefixes[current_station]]['color']);
 						$('.current-station-font-color').css('color', stations[prefixes[current_station]]['fcolor']);
