@@ -270,14 +270,14 @@ html, body {
 						return false;
 					});
 
-					$(document).on('click', '.all-stations td', function(e) {
+					$(document).on('click', '.all-stations-dropdown td', function(e) {
 						e.stopPropagation();
 						current_station = prefixes.indexOf($(this).attr("id"));
 						start_play(stations[prefixes[current_station]][current_bitrate]);
 						update_views();
 
-						if (window.location.pathname == '/radio/stations/') {
-							window.history.pushState({"html":$('#pjax-container').html(),"pageTitle":stations[prefixes[current_station]]['name']}, stations[prefixes[current_station]]['name'], '/radio/stations/?st='+prefixes[current_station]);
+						if (window.location.pathname == '/') {
+							window.history.pushState({"html":$('#pjax-container').html(),"pageTitle":stations[prefixes[current_station]]['name']}, stations[prefixes[current_station]]['name'], '/?st='+prefixes[current_station]);
 							$('.tab-buttons .tab.active').trigger('click');
 						}
 					});
