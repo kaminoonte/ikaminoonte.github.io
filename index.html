@@ -270,7 +270,7 @@ html, body {
 						return false;
 					});
 
-					$(document).on('click', '.all-stations-dropdown td', function(e) {
+					$(document).on('click', '.all-stations td', function(e) {
 						e.stopPropagation();
 						current_station = prefixes.indexOf($(this).attr("id"));
 						start_play(stations[prefixes[current_station]][current_bitrate]);
@@ -630,7 +630,7 @@ html, body {
 						image = encodeURIComponent(image);
 						if (image === 'undefined') { image = 'http://radiorecord.ru/vk_pic.jpg'; }
 
-						var ttt = "https://www.facebook.com/dialog/feed?app_id=1423433514596180&display=popup&caption="+encodeURIComponent("Player Radio Record")+"&link=https://cnhv.co/p0o";
+						var ttt = "https://www.facebook.com/dialog/feed?app_id=1423433514596180&display=popup&caption="+encodeURIComponent("Player Radio Record")+"&link=https://goo.gl/W5p599";
 						var ttt2 = encodeURIComponent(" - ");
 						var ttt3 = encodeURIComponent("Мне нравится ");
 						var ttt4 = encodeURIComponent(" на ПЛЕЕР РАДИО РЕКОРД!");
